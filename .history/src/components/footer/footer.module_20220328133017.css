@@ -1,0 +1,27 @@
+footer {
+    background: #1D1D1B;
+    padding: 40px 80px;
+    color: #E2E2E2;
+}
+
+.footer_main {
+    display: flex;
+    justify-content: space-between;
+}
+
+h3 {
+    padding-left: 30px;
+}
+
+.footer_main ul {
+    list-style: none;
+    margin-right: 50px;
+}
+
+.footer_main ul li {
+    color: #E2E2E2;
+} 
+
+.icon_footer {
+    margin-right: 6px;
+}

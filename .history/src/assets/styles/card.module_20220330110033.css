@@ -1,0 +1,41 @@
+.card_uni {
+    margin-top: 20px;
+    position: relative;
+    max-heigth: 410px;
+    max-height: ;
+    width: 310px;
+    border: 1px solid #ff6e4e;
+    box-shadow: 0 0 10px 3px #ff6e4e;
+  }
+  .card:first-of-type {
+    margin-right: 2em;
+  }
+  .img {
+    width: 100%;
+    max-width: 300px;
+    padding: 5px;
+  }
+  
+  /* card with triangle */
+  .triangle-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }   
+  .triangle {
+    float: right;
+    position: relative;
+    border-style: solid;
+    border-width: 0 105px 105px 0;
+    border-color: transparent #f5431a transparent transparent;
+    text-align: center;
+  }    
+  .triangle-text {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: -105px;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }

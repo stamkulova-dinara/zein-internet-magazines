@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    padding: 10px 80px;
+    position: relative;
+}
+
+.girl_face {
+    position: absolute;
+    margin-left: 20px;
+    bottom: 200px;
+    /* margin-bottom: 150px; */
+    /* padding-top: 50px;  */
+}
+
+.about {
+    width: 500px;
+}
+
+.abot_photo {
+    padding-top: 0;
+    margin-top: 0px;
+}

@@ -1,0 +1,15 @@
+.news_content {
+    background-color: #ECECEC;
+    padding: ;
+}
+
+.card_news {
+    display: flex;
+    /* flex-wrap: wrap; */
+    background-color: white;
+    padding: 15px;
+}
+
+.image_news {
+    width: 226px;
+}

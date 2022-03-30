@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    padding: 10px 80px;
+}
+
+.girl_face {
+    margin-top: 100px;
+}
+
+.about {
+    width: 500px;
+}

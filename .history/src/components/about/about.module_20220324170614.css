@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    padding: 10px 80px;
+}
+
+.about {
+    width: 450px;
+}

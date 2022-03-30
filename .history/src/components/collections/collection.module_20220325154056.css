@@ -1,0 +1,52 @@
+.content_collection {
+    height: 500px;
+    padding: 10px 70px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.collection {
+    width: 280px;
+    margin: 10px;
+}
+
+.collection_image {
+     width: 270px;
+     height: 360px;
+     position: absolute;
+     
+}
+
+.info {
+    position: absolute;
+    margin-top: 284px;
+    /* align-items: flex-end; */
+}
+
+.card_title {
+    color: white;
+    font-size: 18px;
+    width: 270px;
+    /* font-weight: 500; */
+}
+
+.card_title p {
+    margin-bottom: 5px;
+    align-items: center;
+    text-align: center;
+}
+
+#button {
+    border-radius: 0%;
+    width: 270px;
+    height: 44px;
+}
+
+#button:hover {
+    color: #000;
+    background-color: white;
+    border: ;
+}

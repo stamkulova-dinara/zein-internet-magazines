@@ -1,0 +1,14 @@
+.news_content {
+    background-color: #ECECEC;
+}
+
+.card_news {
+    display: flex;
+    /* flex-wrap: wrap; */
+    background-color: white;
+    pad
+}
+
+.image_news {
+    width: 226px;
+}

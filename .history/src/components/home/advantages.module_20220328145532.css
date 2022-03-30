@@ -1,0 +1,11 @@
+
+.theme {
+    margin-top: 40px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.advantages {
+    display: flex;
+}

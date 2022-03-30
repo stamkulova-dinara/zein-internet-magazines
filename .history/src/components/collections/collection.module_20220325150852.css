@@ -1,0 +1,13 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.collection {
+    
+}
+
+.collection_image {
+     width: 280px;
+     height: 350px;
+}

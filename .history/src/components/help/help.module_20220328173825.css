@@ -1,0 +1,22 @@
+.help_content {
+    display: flex;
+    background-color: #ECECEC;
+    padding: 10px 90px;
+}
+
+#item {
+    margin-bottom: 10px;
+}
+
+.help_image {
+    width: 500px;
+    height: 500px;
+}
+
+.help_info {
+    margin-left: 20px;
+}
+
+#item_info {
+
+}

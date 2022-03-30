@@ -1,0 +1,18 @@
+footer {
+    background: #1D1D1B;
+    height: 230px;
+    /* display: flex; */
+    padding: 10px 80px;
+    /* justify-content: space-between; */
+    color: #E2E2E2;
+
+}
+
+.footer_main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_main ul {
+    list-style: none;
+}

@@ -1,0 +1,35 @@
+.content_collection {
+    height: 500px;
+    padding: 10px 70px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.collection {
+    width: 280px;
+    margin: 10px;
+}
+
+.collection_image {
+     width: 280px;
+     height: 350px;
+     position: absolute;
+     
+}
+
+.info {
+    position: absolute;
+    margin-top: 50px;
+    /* align-items: flex-end; */
+}
+
+/* .card_title {
+    position: absolute;
+}
+
+#button {
+    position: absolute;
+} */

@@ -1,0 +1,22 @@
+.content {
+    background: #ECECEC;
+    padding: 10px 80px;
+    margin: 0;
+}
+
+.theme {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo {
+    margin: 0 8px;
+    width: 290px;
+    /* height: 390px; */
+}
