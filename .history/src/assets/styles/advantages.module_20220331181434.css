@@ -1,0 +1,35 @@
+.theme {
+    margin: 20px 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.advantages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* margin-bottom: 50px; */
+}
+
+.advanItem {
+    width: 280px;
+    background-color: white;
+    margin: 8px;
+    padding: 6px px;
+    align-items: center;
+    text-align: center;
+}
+
+.advanImage {
+    padding: 15px 10px;
+}
+
+.advanImage2 {
+    padding: 22px 10px;
+}
+
+.advanInfo {
+    margin-top: 8px;
+    color: #979797;
+}

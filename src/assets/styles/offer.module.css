@@ -1,0 +1,12 @@
+.content {
+    background: #ECECEC;
+    padding: 3% 6%;
+    /* margin: 0; */
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.offer_text {
+    background-color: #fff;
+    padding: 16px;
+}

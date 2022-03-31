@@ -1,0 +1,58 @@
+/* .swiper_wrap {
+    display: flex;
+} */
+
+.swiper_card {
+    background-color: white;
+    margin-right: 11px;
+}
+
+.swiper_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* background-color: white; */
+}
+
+.swipers {
+    width: 286px;
+    /* background-color: white; */
+    /* margin-right: 2%; */
+}
+
+.swiper_image {
+    width: 286px;
+}
+
+.card_info {
+    padding: 6px;
+    /* margin-top: 295px; */
+    /* position: absolute; */
+}
+
+#title {
+    margin-bottom: 0;
+}
+
+.size {
+    margin: 0;
+}
+
+h6 {
+    margin-bottom: 0;
+}
+
+.old_price {
+    color: #ADADAD;
+    text-decoration: line-through;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.product_color {
+    display: flex;
+}
+
+.product_color:hover {
+    cursor: pointer;
+}
