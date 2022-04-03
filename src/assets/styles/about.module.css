@@ -1,9 +1,15 @@
 .container {
     display: flex;
-    padding: 20px 80px;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    padding: 20px 90px;
     position: relative;
     background: #ECECEC;
     font-family: 'Montserrat';
+}
+
+.about_photos {
+    width: 100%;
 }
 
 .girl_face {

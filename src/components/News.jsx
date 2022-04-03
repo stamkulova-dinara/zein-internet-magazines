@@ -1,45 +1,44 @@
-import React from 'react'
-import image1 from '../assets/images/image1.png'
-import image2 from '../assets/images/image2.png'
-import image3 from '../assets/images/image3.png'
-import image4 from '../assets/images/image4.png'
-import image5 from '../assets/images/image5.png'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import style from '../assets/styles/news.module.css'
 
-const data = [
-  {
-    image: image1
-  },
-  {
-    image: image2
-  },
-  {
-    image: image3
-  },
-  {
-    image: image4
-  },
-  {
-    image: image5
-  },
-  {
-    image: image2
-  },
-  {
-    image: image3
-  },
-]
-
 const News = () => {
+  const [data, setData] = useState([])
+  const [currentPage, setCurrentPage] = useState(8)
+  const [fetching, setfetching] = useState(true)
+
+  const scrollHandler = (e) => {
+    if( e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100) {
+      setfetching(true)
+    }
+  }
+
+  useEffect(() => {
+    if (fetching) {
+      axios.get(`https://623c10012e056d1037f94796.mockapi.io/api/v1/news?p=1&l=${currentPage}`)
+      .then(response =>  {
+        setData([...data,...response.data])
+      setCurrentPage(prev => prev + 8)
+      })
+      .finally(() => setfetching(false))
+    }
+  }, [fetching])
+
+  useEffect(() => {
+    document.addEventListener('scroll', scrollHandler)
+    
+    return function () {
+      document.removeEventListener('scroll', scrollHandler)
+  }
+  }, [])
   return (
       <div className={style.news_content}>
         {data.map(el => (
-          <div className={style.card_news}>
+          <div className={style.card_news} key={el.id}>
             <img src={el.image}  className={style.image_news}/>
             <div className={style.info_news}>
-              <h6>Lorem ipsum dolor sit amet</h6>
-              <p>Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu econguecon guecon guecon guecong ueconguecong uec ongue.
-Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada. Viverra pharetra, augue neque  Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis </p>
+              <h6>{el.title},{el.id}</h6>
+              <p>{el.description}</p>
             </div>
           </div>
         ))}

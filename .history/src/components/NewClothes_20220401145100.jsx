@@ -25,7 +25,7 @@ const NewClothes = () => {
         {newClothes.slice(0, 9).map((el) => {
           if (el.new === true) {
             return (
-              <div className={style.card_slider}>
+              <div className={style.swiper_card}>
                 {el.sale !== null ? (
                    <div className={style.arrow}>
                    <span className={style.arrow_right}>{el.sale}%</span>

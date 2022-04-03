@@ -7,7 +7,8 @@ import style from "../assets/styles/cardSlider.module.css";
 
 const Hit = () => {
   const [newClothes, setNewClothes] = useState([]);
-  const [isFavorites, setIsFavorites] = useState(false);
+  const [newClothes, setNewClothes] = useState([]);
+
 
   const getNewClothes = async () => {
     const fetchData = await fetch(
@@ -18,10 +19,6 @@ const Hit = () => {
   };
 
   console.log(newClothes)
-
-  // const changeStatus = () => {
-
-  // }
 
   useEffect(() => {
     getNewClothes();

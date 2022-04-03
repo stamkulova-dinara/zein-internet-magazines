@@ -1,10 +1,7 @@
-/* .swiper_wrap {
-    display: flex;
-} */
-
-.swiper_card {
-    background-color: white;
-    margin-bottom: 10px;
+.content {
+    background: #ECECEC;
+    width: 100%;
+    padding: 3% 7%;
 }
 
 .swiper_wrap {
@@ -12,27 +9,24 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    /* background-color: white; */
 }
 
+.card_slider{
+    background: white;
+    margin-bottom: 8px;
+}
 .swipers {
     width: 286px;
-    /* overflow: hidden; */
     position: relative;
-    /* background-color: white; */
-    /* margin-right: 2%; */
 }
 
 .swiper_image {
     width: 286px;
-    /* overflow: hidden; */
     position: relative;
 }
 
 .card_info {
     padding: 6px;
-    /* margin-top: 295px; */
-    /* position: absolute; */
 }
 
 #title {

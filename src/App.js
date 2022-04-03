@@ -14,15 +14,16 @@ import Footer from './components/Footer';
 import Product from './components/Product';
 import Help from './components/Help';
 import Favorites from './components/Favorites';
-import Card from './components/card';
 import Basket from './components/Basket';
 import Offer from './components/Offer';
+import SearchResult from './components/SearchResult';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
       <Router>
-      <Header/>
+      <Navbar/>
       <Routes>
         <Route index path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
@@ -34,6 +35,8 @@ function App() {
         <Route path='/offer' element={<Offer/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
         <Route path='/basket' element={<Basket/>}/>
+        <Route path='/search' element={<SearchResult/>}/>
+        {/* <Route path='/product/"'/> */}
       </Routes>
       <Footer/>
       </Router>

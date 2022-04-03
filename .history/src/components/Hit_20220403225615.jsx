@@ -7,7 +7,6 @@ import style from "../assets/styles/cardSlider.module.css";
 
 const Hit = () => {
   const [newClothes, setNewClothes] = useState([]);
-  const [isFavorites, setIsFavorites] = useState(false);
 
   const getNewClothes = async () => {
     const fetchData = await fetch(
@@ -19,10 +18,6 @@ const Hit = () => {
 
   console.log(newClothes)
 
-  // const changeStatus = () => {
-
-  // }
-
   useEffect(() => {
     getNewClothes();
   }, []);
@@ -32,7 +27,7 @@ const Hit = () => {
     {newClothes.slice(0, 9).map((el) => {
       if (el.hitSale === true) {
         return (
-          <div className={style.card_slider}>
+          <div className={style.swiper_card}>
             {el.sale !== null ? (
                <div className={style.arrow}>
                <span className={style.arrow_right}>{el.sale}%</span>

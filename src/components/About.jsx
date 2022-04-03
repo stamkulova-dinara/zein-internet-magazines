@@ -7,11 +7,8 @@ import image3 from "../assets/images/about2.png";
 const About = () => {
   return (
     <div className={style.container}>
-      <div>
+      <div className={style.about_photos}>
         <img src={image} className={style.photo} />
-        {/* <div>
-        <img src={image3} className={style.girl_face}/>
-        </div> */}
         <div>
           <img src={image2}  className={style.about_photo}/>
           <img src={image3} className={style.girl_face}/>

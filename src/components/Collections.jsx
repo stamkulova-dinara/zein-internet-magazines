@@ -44,7 +44,7 @@ const Collections = () => {
               <img src={el.image} className={style.collection_image}/>
               <div className={style.info}>
                 <div className={style.card_title}>
-              <p >{el.title}</p>
+              <p >{el.collection}</p>
               </div>
               <Link to={"/collections/" + el.id}>
               <Button id={style.button} variant="dark">Смотреть все <MdArrowForwardIos/></Button>{' '}

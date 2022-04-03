@@ -19,9 +19,7 @@ const Hit = () => {
 
   console.log(newClothes)
 
-  // const changeStatus = () => {
-
-  // }
+  const changesat
 
   useEffect(() => {
     getNewClothes();
