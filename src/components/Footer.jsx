@@ -75,13 +75,13 @@ const Footer = () => {
                     </li>
                  </a>  
                  <a href='https://t.me/Zeonitcommunity' target='_blank'> 
-                    <li>
+                    <li className={style.mobile_none}>
                     <img src={telegramIcon} className={style.icon_footer}/>
                         Telegram
                         </li>
                 </a>
                 <a href='https://wa.me/+996999805099' target='_blank'>   
-                    <li>
+                    <li className={style.mobile_none}>
                     <img src={whatsappIcon} className={style.icon_footer}/>
                         Whatsapp
                          </li>

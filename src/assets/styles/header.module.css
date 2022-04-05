@@ -53,6 +53,14 @@ a {
     background: #F8F8F8;
 }
 
+.search_icon:hover {
+    cursor: pointer;
+}
+
+.search:focus {
+    outline: none;
+}
+
 .search_icon {
     position: absolute;
     height: 18px;
@@ -80,7 +88,11 @@ a:hover {
 }
 
 @media (max-width: 1115px) {
-    .nav_bottom {
+    .search_icon {
+        display: none;
+    }
+
+    .search {
         display: none;
     }
 }

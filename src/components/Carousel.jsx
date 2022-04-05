@@ -8,18 +8,22 @@ import "swiper/css/autoplay"
 
 const carouselData = [
   {
+    id: 1,
     image:
       "https://altermoda.ru/bundles/ostrovweb/images/o-kompanii/main_new_600x1920.jpg",
   },
   {
+    id: 2,
     image:
       "https://www.lovemodestfashion.com/image/cache/catalog/banner-new-1-1920x600.jpg",
   },
   {
+    id: 3,
     image:
       "https://www.lovemodestfashion.com/image/cache/catalog/banner-new-2-1920x600.jpg",
   },
   {
+    id: 4,
     image:
       "https://themes09.anvanto.com/super/themes/charme_3_mini/modules/anthemeblocks/images/6034f93609572.jpg",
   },
@@ -36,7 +40,7 @@ const Carousel = () => {
         pagination={{ clickable: true }}
       >
         {carouselData.map((el) => (
-          <SwiperSlide>
+          <SwiperSlide key={el.id}>
             <img src={el.image} className={style.slider_image} />
           </SwiperSlide>
         ))}
