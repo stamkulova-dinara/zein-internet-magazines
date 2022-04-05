@@ -11,7 +11,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* width: 100%; */
     width: 625px;
 }
 
@@ -27,18 +26,36 @@
     height: 410px;
 }
 
+.theme {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
 .art {
-    font-size: 14px;
-    line-height: 14px;
+    font-weight: normal;
 }
 
 .product_color {
     display: flex;
+    margin-bottom: 10px;
+}
+
+.color_theme {
+    font-weight: 600;
+}
+
+.theme_info {
+    font-weight: normal;
 }
 
 .color {
     display: flex;
     margin-top: 8px;
+}
+
+.price {
+    font-weight: 500;
 }
 
 .old_price{
@@ -55,6 +72,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.themes {
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .shopping_bag_btns {

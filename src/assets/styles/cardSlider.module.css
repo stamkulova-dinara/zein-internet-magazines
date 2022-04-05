@@ -74,3 +74,24 @@ h6 {
     bottom: 22px;
     color: #fff;
   }
+
+.likes {
+    position: absolute;
+    z-index: 100;
+    margin-left: 250px;
+    margin-top: 10px;
+}
+
+.likes:hover {
+    cursor: pointer;
+}
+
+.unlike {
+    color: white;
+    font-size: 26px;
+}
+
+.like {
+    color: red;
+    font-size: 28px;
+}

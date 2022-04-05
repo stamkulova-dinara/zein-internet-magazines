@@ -36,9 +36,9 @@ const Product = () => {
                  </div>
               <div className={style.product_info}>
               <h4>{data.data[idProd].title}</h4>
-              <h6>Артикул: <span className={style.art}>{data.data[idProd].art}</span></h6>
+              <h6 className={style.theme}>Артикул: <span className={style.art}>{data.data[idProd].art}</span></h6>
               <div className={style.product_color}>
-              <h6>Цвет:</h6>
+              <div className={style.color_theme}>Цвет:</div>
               <div className={style.color}>
               {data.data[idProd].color.map(e => (
                 <div style={{
@@ -53,17 +53,17 @@ const Product = () => {
               ))}
               </div>
               </div>
-              <h4>
+              <h4 className={style.price}>
                 {data.data[idProd].price} p{" "}
                 <span className={style.old_price}>{data.data[idProd].oldPrice} р.</span>
               </h4>
               <h6>О товаре:</h6>
               <p className={style.description}>{data.data[idProd].description}</p>
               <div className={style.info}>
-                <div>Размерный ряд: <span>{data.data[idProd].size}</span> </div>
-                <div>Состав ткани: <span>{data.data[idProd].fabric}</span></div>
-                <div>Количество в линейке :<span>{data.data[idProd].quantity}</span></div>
-                <div>Материал: <span>{data.data[idProd].fabric}</span></div>
+                <div className={style.themes}>Размерный ряд: <span className={style.theme_info}>{data.data[idProd].size}</span> </div>
+                <div className={style.themes}>Состав ткани: <span className={style.theme_info}>{data.data[idProd].fabric}</span></div>
+                <div className={style.themes}>Количество в линейке :<span className={style.theme_info}>{data.data[idProd].quantity}</span></div>
+                <div className={style.themes}>Материал: <span className={style.theme_info}>{data.data[idProd].fabric}</span></div>
               </div>
               <div className={style.shopping_bag_btns}> 
               <Button variant="dark" id={style.add_bag_btn}><img src={bag} className={style.bag_icon}/> Добавить в корзину</Button>{' '}
