@@ -40,8 +40,18 @@ export const getCollection=()=>{
         })
 }
 
-export const getCollectionById=(id)=>{
-    return sendHttpRequest('GET', `https://623c10012e056d1037f94796.mockapi.io/api/v1/collection/${id}`)
+export const getProduct=()=>{
+    return sendHttpRequest('GET', 'https://623c10012e056d1037f94796.mockapi.io/api/v1/products')
+        .then(responData=>{
+            return responData
+        })
+        .catch(err=>{
+            return null
+        })
+}
+
+export const getProductById=(productId)=>{
+    return sendHttpRequest('GET', `https://623c10012e056d1037f94796.mockapi.io/api/v1/products/${productId}`)
         .then(responData=>{
             return responData
         })

@@ -9,7 +9,6 @@
 
 .nav_menu ul {
     padding-left: 90px;
-    /* padding-right: 6%; */
     width: 100%;
     display: flex;
     list-style: none;
@@ -53,8 +52,11 @@ a {
     background: #F8F8F8;
 }
 
-.search_icon:hover {
-    cursor: pointer;
+#search_btn{ 
+    position: absolute;
+    height: 18px;
+    margin-top: 30px;
+    margin-left: 845px;
 }
 
 .search:focus {
@@ -62,10 +64,7 @@ a {
 }
 
 .search_icon {
-    position: absolute;
-    height: 18px;
-    margin-top: 30px;
-    margin-left: 845px;
+    font-size: 22px;
 }
 
 .header_rights {
@@ -77,6 +76,13 @@ a {
     margin-right: 7px;
     margin-top: 5px;
     height: 18px;
+}
+
+.react_icon {
+    margin-right: 5px;
+    margin-top: 3px;
+    color: #515151;
+    font-size: 21px;
 }
 
 a {

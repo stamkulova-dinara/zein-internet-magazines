@@ -8,6 +8,9 @@ import advantagesIcon2 from '../assets/icon/advantages.png'
 const Advantages = () => {
   return (
     <div>
+       <div className={style.theme}>
+            <h3>Наши преимущества</h3>
+        </div>
         <div className={style.advantages}>
             <div className={style.advanItem}>
                 <img src={advantagesIcon} alt='photo' className={style.advanImage}/>

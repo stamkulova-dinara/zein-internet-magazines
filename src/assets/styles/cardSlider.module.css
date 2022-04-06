@@ -4,6 +4,13 @@
     padding: 3% 7%;
 }
 
+.theme {
+    margin-top: 20px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
 .swiper_wrap {
     display: flex;
     justify-content: space-between;
@@ -56,6 +63,13 @@ h6 {
     cursor: pointer;
 }
 
+#product_color{
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin-right: 10px;
+}
+
 .arrow {
     width: 0; 
 	height: 0; 
@@ -94,4 +108,14 @@ h6 {
 .like {
     color: red;
     font-size: 28px;
+}
+
+.btn {
+    margin: 10px 80px;
+    align-items: center;
+    text-align: center;
+}
+
+.btn button {
+    width: 100px;
 }

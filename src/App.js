@@ -18,12 +18,15 @@ import Basket from './components/Basket';
 import Offer from './components/Offer';
 import SearchResult from './components/SearchResult';
 import Navbar from './components/Navbar';
+import { useState } from 'react';
 
 function App() {
+  const [searchResult, setSearchResult] = useState([])
+
   return (
     <div className="App">
       <Router>
-      <Navbar/>
+      <Header setSearchResult={setSearchResult}/>
       <Routes>
         <Route index path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
@@ -35,7 +38,7 @@ function App() {
         <Route path='/offer' element={<Offer/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
         <Route path='/basket' element={<Basket/>}/>
-        <Route path='/search' element={<SearchResult/>}/>
+        <Route path='/search' element={<SearchResult searchResult={searchResult}/>}/>
       </Routes>
       <Footer/>
       </Router>

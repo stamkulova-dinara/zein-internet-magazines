@@ -1,8 +1,7 @@
 .floating_btn {
-    width: 100%;
-    padding: 7%;
+    padding: 0 7%;
     position: fixed;
-    bottom: 80px;
+    bottom: 60px;
     left: 0;
     right: 0;
     margin: 0 auto;

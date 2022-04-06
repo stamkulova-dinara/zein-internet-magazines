@@ -58,7 +58,7 @@ const Footer = () => {
                         </li>
 
                     <li>
-                        <a href='mailto:someone@yoursite.com' style={{color: 'white'}}>
+                        <a href='mailto:mail@gmail.com' style={{color: 'white'}}>
                     <img src={emailIcon} className={style.icon_footer}/>
                         mail@gmail.com
                         </a>
