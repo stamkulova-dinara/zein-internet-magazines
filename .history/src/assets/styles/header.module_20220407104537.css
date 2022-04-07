@@ -1,0 +1,111 @@
+.nav_top {
+   display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid #ebe8e8;
+   padding-top: 10px;
+   width: 100%;
+}
+
+
+.nav_menu ul {
+    padding-left: 90px;
+    width: 100%;
+    display: flex;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav_menu ul li {
+    margin-right: 25px;
+    color: #000;
+}
+
+.header_right {
+    padding-right: 90px;
+    margin-left: 3% auto;
+}
+
+.tel {
+    color: #979797;
+}
+
+.telephone_number {
+    color: #000;
+}
+
+.nav_bottom {
+    padding: 5px 90px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebe8e8;
+}
+
+.search {
+    border: 1px solid #E0E0E0;
+    margin-top: 25px;
+    position: relative;
+    height: 35px;
+    width: 662px;
+    background: #F8F8F8;
+}
+
+#search_btn{ 
+    position: absolute;
+    height: 18px;
+    margin-top: 30px;
+    margin-left: 845px;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.search_icon {
+    font-size: 22px;
+}
+
+.search_result {
+    list-style: none;
+    border: 1px solid #c0c0c0;
+    margin-top: 60px;
+    ml
+}
+
+.header_rights {
+    display: flex;
+    margin-top: 30px;
+}
+
+.header_icon{
+    margin-right: 7px;
+    margin-top: 5px;
+    height: 18px;
+}
+
+.react_icon {
+    margin-right: 5px;
+    margin-top: 3px;
+    color: #515151;
+    font-size: 21px;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: #000;
+}
+
+@media (max-width: 1115px) {
+    .search_icon {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+}
