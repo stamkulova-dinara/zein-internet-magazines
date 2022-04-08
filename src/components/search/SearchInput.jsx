@@ -6,8 +6,12 @@ import style from "../../assets/styles/header.module.css";
 const SearchInput = ({setSearchResult, searchResult, setSearchValue, searchValue}) => {
     const [inputValue, setInputValue] = useState("");
 
+    const valu = (e) => {
+      setInputValue(e.target.value)
+      // handleChange()
+    }
+
     const handleChange = async (e) => {
-        setInputValue(e.target.value)
         const fetchData = await fetch(
           `https://623c10012e056d1037f94796.mockapi.io/api/v1/products?title=${inputValue}`
         );
@@ -18,18 +22,23 @@ const SearchInput = ({setSearchResult, searchResult, setSearchValue, searchValue
           setInputValue('')
       }
   return (
-    <>
+    <div className={style.search_content}>
         <input
           placeholder="Поиск..."
           className={style.search}
-          value={inputValue}
+          onChange={valu}
         />
-        <div id={style.search_btn} onClick={handleChange}>
+        {/* <div className={style.results}>
+        {searchResult.map(el=> (
+          <p className={style.item_result}>{el.title}</p>
+        ))}
+        </div> */}
           <Link to={"/search"}>
+            <button className={style.searchs_btn} onClick={handleChange}>
             <BiSearch className={style.search_icon}/>
+            </button>
           </Link>
-        </div>
-    </>
+    </div>
   )
 }
 

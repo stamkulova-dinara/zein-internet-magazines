@@ -5,7 +5,8 @@ import Advantages from "./Advantages";
 import GetCollections from "./GetCollections";
 import NewClothes from "./NewClothes";
 import Hit from "./Hit";
-import FloatingBtn from "./FloatingBtn";
+import FloatingBtn from "./FloatingButton/FloatingBtn";
+import ScrollToTop from "./FloatingButton/ScrollToTop";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <NewClothes />
       <GetCollections />
       <Advantages />
+      <ScrollToTop/>
       <FloatingBtn />
     </div>
   );

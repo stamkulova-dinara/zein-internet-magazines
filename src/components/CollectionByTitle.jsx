@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router'
 import style from "../assets/styles/content.module.css";
 import Card from './card/Card';
+import FloatingBtn from './FloatingButton/FloatingBtn';
 
 const CollectionByTitle = () => {
     const params = useParams()
@@ -29,6 +30,7 @@ const CollectionByTitle = () => {
             <Card product={el} key={el.id}/>
       )) : <div>Loading...</div>}
   </div>
+  <FloatingBtn/>
   </div>
   )
 }

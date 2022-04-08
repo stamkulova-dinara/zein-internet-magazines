@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import style from '../assets/styles/news.module.css'
+import FloatingBtn from './FloatingButton/FloatingBtn'
 
 const News = () => {
   const [data, setData] = useState([])
@@ -42,6 +43,7 @@ const News = () => {
             </div>
           </div>
         ))}
+        <FloatingBtn/>
       </div>
   )
 }

@@ -1,10 +1,11 @@
 .content_collection {
     width: 100%;
-    padding: 3% 7%;
+    padding: 2% 7%;
     background-color: #ECECEC;
     min-height: -webkit-calc(100% - 186px);
     min-height: -moz-calc(100% - 186px);
     min-height: calc(100% - 186px);
+    font-family: Montserrat;
 }
 
 .theme {
@@ -12,24 +13,19 @@
     width: 100%;
     align-items: center;
     text-align: center;
+    height: auto;
 }
 
 .cards {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    height: 800px;
-}
-
-.cards_collection {
-    display: flex;
-    flex-wrap: wrap;
-    height: 400px;
-    justify-content: space-between;
 }
 
 .collection {
     width: 286px;
+    height: 380px;
+    margin-bottom: 10px;
 }
 
 .collection_image {
@@ -41,6 +37,7 @@
 .info {
     position: absolute;
     margin-top: 305px;
+    z-index: 100;
 }
 
 .card_title {

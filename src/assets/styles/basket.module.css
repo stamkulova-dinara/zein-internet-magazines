@@ -9,10 +9,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* background-color: #fff;
-    padding: 12px;
-    width: 760px;
-    height: 166px; */
 }
 
 .product {
@@ -26,6 +22,7 @@
 
 .product_title {
     margin-bottom: 15px;
+    width: 250px;
 }
 
 .product_info {
@@ -91,4 +88,8 @@
     border: 1px solid #E5271B;
     height: 44px;
     width: 336px;
+}
+
+.order_length {
+    margin-left: 170px;
 }

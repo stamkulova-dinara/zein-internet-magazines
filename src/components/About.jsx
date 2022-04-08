@@ -3,6 +3,7 @@ import style from '../assets/styles/about.module.css'
 import image from "../assets/images/about.png";
 import image2 from "../assets/images/about1.png";
 import image3 from "../assets/images/about2.png";
+import FloatingBtn from "./FloatingButton/FloatingBtn";
 
 const About = () => {
   return (
@@ -35,6 +36,7 @@ const About = () => {
           возможность постоянно пополнять свой гардероб стильной одеждой.
         </p>
       </div>
+      <FloatingBtn/>
     </div>
   );
 };

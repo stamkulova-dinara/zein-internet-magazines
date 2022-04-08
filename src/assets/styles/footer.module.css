@@ -1,8 +1,7 @@
 footer {
     background: #1D1D1B;
     width: 100%;
-    padding: 3% 6%;
-    /* padding: 40px 90px; */
+    padding: 2% 7%;
     color: #E2E2E2;
     font-family: 'Montserrat', sans-serif;
 }
@@ -14,16 +13,16 @@ footer {
 }
 
 .footer_logo {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 h5 {
     padding-left: 30px;
+    margin-top: 15px;
 }
 
 .footer_main ul {
     list-style: none;
-    /* margin-right: 50px; */
 }
 
 .footer_main ul li {

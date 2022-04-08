@@ -3,14 +3,17 @@ import { useParams } from "react-router";
 import style from "../assets/styles/product.module.css";
 import { Button } from "react-bootstrap";
 import { FiHeart } from "react-icons/fi";
+import { TiHeartFullOutline } from 'react-icons/ti'
 import bag from "../assets/icon/Icon.png";
 import { getProductById } from "../container/httpRequest";
-import Basket from "./Basket";
+import { Link } from "react-router-dom";
+import SimilarProduct from './SimilarProduct';
 
 const Product = () => {
   const params = useParams();
   const [data, setData] = useState({});
   const [basketpage, setBasketPage] = useState([]);
+  const [favorite, setFavorite] = useState([])
 
   const getProduct = async () => {
     const fetchData = await getProductById(params.productId);
@@ -50,6 +53,30 @@ const Product = () => {
     basket.push(product);
     setBasketPage(true);
     localStorage.setItem("basket", JSON.stringify(basket));
+    return;
+  }
+
+  function favorites(product) {
+    let favorite = JSON.parse(localStorage.getItem("favorite"));
+    console.log(product)
+    
+    if (!favorite) {
+      favorite = [product];
+      localStorage.setItem("favorite", JSON.stringify(favorite));
+      return;
+    }
+    for (let i = 0; i < favorite.length; i++) {
+      if (favorite[i].id === product.id) {
+        setFavorite(false);
+        favorite.splice(i, 1);
+        localStorage.setItem("favorite", JSON.stringify(favorite));
+        setFavorite(false)
+        return;
+      }
+    }
+    favorite.push(product);
+    setFavorite(true);
+    localStorage.setItem("favorite", JSON.stringify(favorite));
     return;
   }
 
@@ -109,13 +136,14 @@ const Product = () => {
           </div>
           <div className={style.shopping_bag_btns}>
             <Button variant="dark" id={style.add_bag_btn} onClick={() => putProducts(data)}>
-              <img src={bag} className={style.bag_icon} /> {basketpage !== true ? 'Добавить в корзину' : 'Удалить из корзини'}
+              <img src={bag} className={style.bag_icon} /> {basketpage !== true ? 'Добавить в корзину' : <Link to={'/basket'}>Перейти в корзину</Link>}
             </Button>{" "}
-            <Button variant="dark" id={style.like_btn}>
-              <FiHeart className={style.product_like_icon} />
+            <Button variant="dark" id={style.like_btn} onClick={() => favorites(data)}>
+              {favorite !== true ? <FiHeart className={style.product_like_icon} /> : <TiHeartFullOutline style={{fontSize: '28px'}}/>}
             </Button>{" "}
           </div>
         </div>
+        <SimilarProduct id={data.collectionId}/>
       </div>
   );
 };

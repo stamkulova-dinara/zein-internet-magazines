@@ -1,6 +1,18 @@
 .floating_btn {
     padding: 0 7%;
     position: fixed;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    align-items: flex-end;
+    text-align: end;
+    z-index: 100;
+}
+
+.scroll {
+    padding: 0 7%;
+    position: fixed;
     bottom: 60px;
     left: 0;
     right: 0;
@@ -10,11 +22,38 @@
     z-index: 100;
 }
 
+.open {
+    display: flex;
+    position: fixed;
+    bottom: 30px;
+    right: 12%;
+    z-index: 100;
+}
+
+.icons {
+    width: 36px;
+    margin-right: 5px;
+}
+
+.close_icon {
+    margin-left: 12px;
+}
+
 .top_arrow {
     font-size: 42px;
 }
 
+.top_arrow {
+    cursor: pointer;
+}
+
 .chat {
+    width: 25px;
+    height: 25px;
     margin-top: 5px;
     margin-right: 6px;
+}
+
+.chat:hover {
+    cursor: pointer;
 }

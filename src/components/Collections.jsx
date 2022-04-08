@@ -2,28 +2,62 @@ import React, { useEffect, useState } from "react";
 import style from '../assets/styles/collection.module.css'
 import { getCollection } from "../container/httpRequest";
 import CollectionCard from "./card/CollectionCard";
+import FloatingBtn from "./FloatingButton/FloatingBtn";
+import Pagination from "./pagiation/Pagination";
+// import ReactPaginate from "react-paginate";
 
 const Collections = () => {
   const [ collection, setCollection] = useState([])
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const limitPerPage = 8;
+  const pagesVisited = pageNumber * limitPerPage;
 
   const collectionData = async () => {
     const fetchData = await getCollection()
     setCollection(fetchData)
-    console.log(collection)
+    // console.log(collection)
   }
 
   useEffect(() => {
     collectionData()
   }, [])
 
+  const displayCollection = collection
+  .slice(pagesVisited, pagesVisited + limitPerPage)
+  .map((el) => (
+    <CollectionCard collection={el} key={el.id}/>
+  ))
+
+  const pageCount = Math.ceil(collection.length / limitPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
   return (
     <div className={style.content_collection}>
-      Коллекции
+      <h4>Коллекции</h4>
       <div className={style.cards}>
-        {(collection) ? collection.slice(0, 8).map(el => (
+        {displayCollection}
+        {/* {(collection) ? collection.map(el => (
           <CollectionCard collection={el} key={el.id}/>
-          )) : <div>Loading...</div>}
+          )) : <div>Loading...</div>} */}
       </div>
+      <Pagination pageCount={pageCount} changePage={changePage}/>
+      {/* <ReactPaginate
+        previousLabel={"Previous"}
+        nextLabel={"Next"}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={"paginationBttns"}
+        previousLinkClassName={"previousBttn"}
+        nextLinkClassName={"nextBttn"}
+        disabledClassName={"paginationDisabled"}
+        activeClassName={"paginationActive"}
+      /> */}
+     
+      <FloatingBtn/>
     </div>
   )
 }

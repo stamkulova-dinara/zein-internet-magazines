@@ -7,6 +7,7 @@ import Card from "./card/Card";
 
 const Hit = () => {
   const [saleClothes, setSaleClothes] = useState([]);
+  const [limit, setLimit] = useState(8)
 
   const getSaleClothes = async () => {
     const fetchData = await getProduct();
@@ -15,23 +16,36 @@ const Hit = () => {
 
   useEffect(() => {
     getSaleClothes();
-  }, []);
+  }, [limit]);
+
+  console.log(limit)
+
+
+  const limCount = () => {
+    if (limit === 24 ) {
+      return;
+    }
+    setLimit(limit-8);
+  }
 
   const saleProducts = saleClothes.filter((item) => item.status === "sale");
+  console.log(saleProducts)
   return (
     <>
       <div className={style.theme}>
         <h3>Хит продаж</h3>
       </div>
       <div className={style.swiper_wrap}>
-        {(saleProducts) ? saleProducts.slice(0, 8).map(item => (
+        {(saleProducts) ? saleProducts.slice(0, limit).map(item => (
             <Card product={item} key={item.id}/>
         )) : <div>Loading...</div>}
       </div>
       <div className={style.btn}>
-        <Link to={"/collections/10"}>
-          <Button variant="dark">Ещё</Button>{" "}
-        </Link>
+        {limit !== 24 ? 
+          <Button variant="dark" onClick={() => setLimit(limit+8)}>Ещё</Button>
+          :<Button variant="dark" onClick={limCount}>Отмена</Button>
+
+        }
       </div>
     </>
   );

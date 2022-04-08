@@ -44,7 +44,7 @@ const Card = ({product}) => {
     }
 
   return (
-    <div className={style.card_slider}>
+    <div className={style.card_slider} key={product.id}>
     {product.sale !== null ? (
            <div className={style.arrow}>
            <span className={style.arrow_right}>{product.sale}%</span>

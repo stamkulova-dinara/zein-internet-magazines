@@ -2,38 +2,37 @@ import React, { useState, useEffect } from "react";
 import style from "../assets/styles/collection.module.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { getCollection } from "../container/httpRequest";
+import { getLimitCollection } from "../container/httpRequest";
 import CollectionCard from "./card/CollectionCard";
 
 const GetCollections = () => {
   const [collections, setCollections] = useState([]);
+  const [limit, setLimit] = useState(4);
 
   const getCollections = async () => {
-    const data = await getCollection();
+    const data = await getLimitCollection(limit);
     setCollections(data);
   };
 
   useEffect(() => {
     getCollections();
     console.log(collections);
-  }, []);
+  }, [limit]);
 
   return (
     <div className={style.content}>
       <div className={style.theme}>
         <h3>Коллекция</h3>
       </div>
-      <div className={style.cards_collection}>
-        {(collections) ? collections.slice(0, 4).map((el) => (
+      <div className={style.cards}>
+        {(collections) ? collections.map((el) => (
             <CollectionCard collection={el} key={el.id}/>
           )) : <div>Loading...</div>}
       </div>
       <div id={style.btn}>
-        <Link to={"/collections"}>
-          <Button variant="dark" id={style.button_page}>
+          <Button variant="dark" id={style.button_page} onClick={()=>setLimit(limit+4)}>
             Ещё
           </Button>{" "}
-        </Link>
       </div>
     </div>
   );

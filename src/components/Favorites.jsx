@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Card from './card/Card'
 import style from "../assets/styles/content.module.css";
+import FloatingBtn from './FloatingButton/FloatingBtn';
+import ScrollToTop from './FloatingButton/ScrollToTop';
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([])
@@ -19,6 +21,8 @@ const Favorites = () => {
         <Card product={el} key={el.id}/>
       ))}
       </div>
+      <ScrollToTop/>
+      <FloatingBtn/>
     </div>
   )
 }

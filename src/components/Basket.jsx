@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import style from '../assets/styles/basket.module.css'
 import { FaTimes } from 'react-icons/fa'
-import { getProductById } from '../container/httpRequest'
+import ScrollToTop from './FloatingButton/ScrollToTop'
 
 const Basket = () => {
     const [count, setCount] = useState(1)
     const [basketProduct, setBasketProduct] = useState([])
+    // const [basketSum, basket]
 
     const removeCountHandler = () => {
         if(count === 1){
@@ -16,13 +17,23 @@ const Basket = () => {
       useEffect(() => {
        const basket = localStorage.getItem('basket')
        setBasketProduct(JSON.parse(basket))
-      },[])
+      },[basketProduct])
+
+      function del(product) {
+        for(let i = 0; i < basketProduct.length; i++ ) {
+          if (basketProduct[i].id == product) {
+            basketProduct.splice(i, 1);
+            localStorage.setItem("basket", JSON.stringify(basketProduct));
+            return;
+          }
+        }
+      }
 
   return (
     <div className={style.content}>
         <div className={style.products}>
           {basketProduct.map(el=>(
-            <div className={style.product}>
+            <div className={style.product} key={el.id}>
             <img src={el.image[0]} className={style.image_product}/>
             <div className={style.product_info}>
                 <h6 className={style.product_title}>{el.title}</h6>
@@ -35,13 +46,13 @@ const Basket = () => {
                     <button onClick={() => setCount(count + 1)} className={style.product_btn}>+</button>
                 </div>
             </div>
-            <FaTimes style={{marginLeft: '480px'}}/>
+            <FaTimes key={el.id} style={{marginLeft: '350px', cursor: 'pointer'}} onClick={() => del(el.id)}/>
             </div>
             ))}
         </div>
         <div className={style.order_amount}>
             <h6 className={style.order_theme}>Сумма заказа</h6>
-            <p className={style.order_product}>Количество линеек:</p>
+            <p className={style.order_product}>Количество линеек: <span className={style.order_length}>{basketProduct.length} шт</span></p>
             <p className={style.order_product}>Количество товаров:</p>
             <p className={style.order_product}>Стоимость:</p>
             <p className={style.order_product}>Скидка:</p>
@@ -49,6 +60,7 @@ const Basket = () => {
             <p className={style.order_product}>Итого к оплате:</p>
             <button className={style.order_btn}>Оформить заказ</button>
         </div>
+        <ScrollToTop/>
     </div>
   )
 }

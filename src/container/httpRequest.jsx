@@ -40,6 +40,16 @@ export const getCollection=()=>{
         })
 }
 
+export const getLimitCollection=(limit)=>{
+    return sendHttpRequest('GET', `https://623c10012e056d1037f94796.mockapi.io/api/v1/collection?page=1&limit=${limit}`)
+        .then(responData=>{
+            return responData
+        })
+        .catch(err=>{
+            return null
+        })
+}
+
 export const getProduct=()=>{
     return sendHttpRequest('GET', 'https://623c10012e056d1037f94796.mockapi.io/api/v1/products')
         .then(responData=>{

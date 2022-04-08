@@ -1,6 +1,7 @@
 import React from 'react'
 import style from "../assets/styles/content.module.css";
 import Card from './card/Card';
+import SimilarProduct from './SimilarProduct';
 
 const SearchResult = ({searchResult, searchValue}) => {
   console.log(searchResult)
@@ -11,7 +12,7 @@ const SearchResult = ({searchResult, searchValue}) => {
     <div className={style.swiper_wrap}>
       {(searchResult.length !== 0) ? searchResult.map(el => (
         <Card product={el} key={el.id}/>
-      )) : <div>По Вашему запросу ничего не найдено.</div>}
+      )) : <div>По Вашему запросу ничего не найдено.</div> }
   </div>
 </div>
   )
