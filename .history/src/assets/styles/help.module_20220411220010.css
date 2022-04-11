@@ -1,0 +1,24 @@
+.help_content {
+    display: flex;
+    background-color: #ECECEC;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 3% 7%;
+}
+
+#item {
+    margin-bottom: 10px;
+}
+
+.help_image {
+    width: 500px;
+    height: 500px;
+}
+
+.help_info {
+    margin-left: 20px;
+}
+
+/* #item_info {
+    margin-bottom: 10px;
+} */
