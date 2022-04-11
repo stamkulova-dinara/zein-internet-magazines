@@ -1,0 +1,39 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { BiSearch } from 'react-icons/bi'
+import style from "../../assets/styles/header.module.css";
+
+const SearchInput = ({setSearchResult, searchResult, setSearchValue, searchValue}) => {
+    const [inputValue, setInputValue] = useState("");
+
+    const valu = (e) => {
+      setInputValue(e.target.value)
+    }
+
+    const handleChange = async (e) => {
+     if (in)
+      }
+  return (
+    <div className={style.search_content}>
+        <input
+          placeholder="Поиск..."
+          className={style.search}
+          onChange={valu}
+        />
+        {/* <div className={style.results}>
+        {searchResult?.slice(0, ).map(el=> (
+          <Link to={`/collections/${el.collectionId}/product/` + el.id}>
+          <p className={style.item_result}>{el.title}</p>
+          </Link>
+        ))}
+        </div> */}
+          <Link to={"/search"}>
+            <button className={style.searchs_btn} onClick={handleChange}>
+            <BiSearch className={style.search_icon}/>
+            </button>
+          </Link>
+    </div>
+  )
+}
+
+export default SearchInput

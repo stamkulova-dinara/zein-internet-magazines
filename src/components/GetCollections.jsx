@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "../assets/styles/collection.module.css";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { getLimitCollection } from "../container/httpRequest";
+import { getCollection } from "../container/httpRequest";
 import CollectionCard from "./card/CollectionCard";
 
 const GetCollections = () => {
@@ -10,7 +10,7 @@ const GetCollections = () => {
   const [limit, setLimit] = useState(4);
 
   const getCollections = async () => {
-    const data = await getLimitCollection(limit);
+    const data = await getCollection();
     setCollections(data);
   };
 
@@ -25,7 +25,7 @@ const GetCollections = () => {
         <h3>Коллекция</h3>
       </div>
       <div className={style.cards}>
-        {(collections) ? collections.map((el) => (
+        {(collections) ? collections.slice(0, limit).map((el) => (
             <CollectionCard collection={el} key={el.id}/>
           )) : <div>Loading...</div>}
       </div>

@@ -110,3 +110,10 @@
     width: 17%;
     border-radius: 0%;
 }
+
+.similar_prod {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}

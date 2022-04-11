@@ -1,0 +1,41 @@
+.icons {
+    width: 36px;
+    margin-right: 5px;
+}
+
+.modal_wrap {
+    margin: 10px;
+}
+
+.modal_block {
+    width: 360px;
+    align-items: flex-start;
+    text-align: start;
+    padding: 18px;
+}
+
+.theme {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.inputs {
+    padding: 13px;
+    border: 1px solid rgba(31, 31, 31, 0.08);
+    margin-bottom: 10px;
+}
+
+.input {
+    border: none;
+    color:#BEBEBE;
+}
+
+.icon {
+    font-size: 20px;
+    color:#DCDCDC;
+    margin-right: 10px;
+}
+
+.button {
+    width: ;
+}

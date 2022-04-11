@@ -1,0 +1,95 @@
+.card_slider{
+    margin-bottom: 8px;
+}
+
+.card_slider:
+.swipers {
+    width: 226px;
+    position: relative;
+}
+
+.swiper_image {
+    width: 226px;
+    position: relative;
+}
+
+.card_info {
+    padding: 6px;
+}
+
+#art {
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.size {
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #979797;
+}
+
+h6 {
+    margin-bottom: 0;
+}
+
+.old_price {
+    color: #ADADAD;
+    text-decoration: line-through;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.product_color {
+    display: flex;
+}
+
+.product_color:hover {
+    cursor: pointer;
+}
+
+#product_color{
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin-right: 10px;
+}
+
+.arrow {
+    width: 0; 
+	height: 0; 
+	border-top: 53px solid #E5271B;
+	border-bottom: 53px solid transparent;
+	border-right: 53px solid transparent;
+    position: absolute;
+    z-index: 100;
+}
+.arrow_right {
+    position:absolute;
+    left: 5px;
+    font-size: 16px;
+    transform: rotate(-45deg);
+    display:block;
+    bottom: 22px;
+    color: #fff;
+  }
+
+.likes {
+    position: absolute;
+    z-index: 100;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+.likes:hover {
+    cursor: pointer;
+}
+
+.unlike {
+    color: white;
+    font-size: 26px;
+}
+
+.like {
+    color: red;
+    font-size: 28px;
+}

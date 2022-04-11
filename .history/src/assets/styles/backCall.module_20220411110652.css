@@ -1,0 +1,15 @@
+.icons {
+    width: 36px;
+    margin-right: 5px;
+}
+
+.modal_wrap {
+    margin: 10px;
+}
+
+.modal_block {
+    width: 360px;
+    align-items: flex-start;
+    text-align: start;
+    margin: 22px;
+}
