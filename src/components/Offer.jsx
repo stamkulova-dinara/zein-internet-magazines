@@ -1,139 +1,22 @@
-import React from "react";
-import style from '../assets/styles/offer.module.css'
+import React, { useEffect, useState } from "react";
+import style from "../assets/styles/offer.module.css";
+import { getInfo } from "../container/httpRequest";
 
 const Offer = () => {
+  const [data, setData] = useState({});
+  const getOffer = async () => {
+    const fetchData = await getInfo();
+    setData(fetchData[0].offer);
+  };
+
+  useEffect(() => {
+    getOffer();
+  }, []);
   return (
-    <div className={style.content}>
-      <h3>Публичная оферта </h3>
-      <p className={style.offer_text}>
-        Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit
-        viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui
-        id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur
-        ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut
-        amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit
-        tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu
-        econguecon guecon guecon guecong ueconguecong uec ongue. Sit ullamcorper
-        at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo,
-        malesuada. Viverra pharetra, augue neque Sit ullamcorper at gravida quis
-        feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada.
-        Viverra pharetra, augue neque felis enim dui id cum. At pellentesque
-        diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur
-        quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis
-        tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis
-        Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit
-        viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui
-        id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur
-        ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut
-        amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit
-        tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu
-        econguecon guecon guecon guecong ueconguecong uec ongue. Sit ullamcorper
-        at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo,
-        malesuada. Viverra pharetra, augue neque Sit ullamcorper at gravida quis
-        feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada.
-        Viverra pharetra, augue neque felis enim dui id cum. At pellentesque
-        diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur
-        quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis
-        tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis
-        Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit
-        viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui
-        id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur
-        ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut
-        amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit
-        tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu
-        econguecon guecon guecon guecong ueconguecong uec ongue. Sit ullamcorper
-        at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo,
-        malesuada. Viverra pharetra, augue neque Sit ullamcorper at gravida quis
-        feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada.
-        Viverra pharetra, augue neque felis enim dui id cum. At pellentesque
-        diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur
-        quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis
-        tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis
-        Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit
-        viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui
-        id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur
-        ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut
-        amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit
-        tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu
-        econguecon guecon guecon guecong ueconguecong uec ongue. Sit ullamcorper
-        at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo,
-        malesuada. Viverra pharetra, augue neque Sit ullamcorper at gravida quis
-        feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada.
-        Viverra pharetra, augue neque felis enim dui id cum. At pellentesque
-        diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur
-        quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis
-        tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis
-        Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit
-        viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui
-        id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur
-        ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut
-        amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit
-        tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu
-        econguecon guecon guecon guecong ueconguecong uec ongue. Sit ullamcorper
-        at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo,
-        malesuada. Viverra pharetra, augue neque Sit ullamcorper at gravida quis
-        feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada.
-        Viverra pharetra, augue neque felis enim dui id cum. At pellentesque
-        diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur
-        quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis
-        tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis
-        Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit
-        viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui
-        id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur
-        ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut
-        amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit
-        tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu
-        econguecon guecon guecon guecong ueconguecong uec ongue. Sit ullamcorper
-        at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo,
-        malesuada. Viverra pharetra, augue neque Sit ullamcorper at gravida quis
-        feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada.
-        Viverra pharetra, augue neque felis enim dui id cum. At pellentesque
-        diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur
-        quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis
-        tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis
-        Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit
-        viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui
-        id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur
-        ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut
-        amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit
-        tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu
-        econguecon guecon guecon guecong ueconguecong uec ongue. Sit ullamcorper
-        at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo,
-        malesuada. Viverra pharetra, augue neque Sit ullamcorper at gravida quis
-        feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada.
-        Viverra pharetra, augue neque felis enim dui id cum. At pellentesque
-        diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur
-        quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis
-        tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis
-        Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit
-        viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui
-        id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur
-        ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut
-        amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit
-        tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu
-        econguecon guecon guecon guecong ueconguecong uec ongue. Sit ullamcorper
-        at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo,
-        malesuada. Viverra pharetra, augue neque Sit ullamcorper at gravida quis
-        feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada.
-        Viverra pharetra, augue neque felis enim dui id cum. At pellentesque
-        diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur
-        quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis
-        tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis
-        Sit ullamcorper at gravida quis feugiat. Laoreet leo dolor, dui eget sit
-        viverra justo, malesuada. Viverra pharetra, augue neque felis enim dui
-        id cum. At pellentesque diam nulla ac amet quisque quis. Est consectetur
-        ullamcorper curabitur quis viverra hac molestie. Elit pulvinar congue ut
-        amet adipiscing felis tincidunt. Amet quis varius aliquam hendrerit
-        tempus. Sed sit diam quis scelerisque congu econgu econgu econguecongu
-        econguecon guecon guecon guecong ueconguecong uec ongue. Sit ullamcorper
-        at gravida quis feugiat. Laoreet leo dolor, dui eget sit viverra justo,
-        malesuada. Viverra pharetra, augue neque Sit ullamcorper at gravida quis
-        feugiat. Laoreet leo dolor, dui eget sit viverra justo, malesuada.
-        Viverra pharetra, augue neque felis enim dui id cum. At pellentesque
-        diam nulla ac amet quisque quis. Est consectetur ullamcorper curabitur
-        quis viverra hac molestie. Elit pulvinar congue ut amet adipiscing felis
-        tincidunt. Amet quis varius aliquam hendrerit tempus. Sed sit diam quis
-      </p>
-    </div>
+    <section className={style.content}>
+      <h3>{data.title}</h3>
+      <p className={style.offer_text}>{data.text}</p>
+    </section>
   );
 };
 

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import "../../assets/styles/header.css";
 import FavoritesBtn from "../button/FavoritesBtn";
 import BasketBtn from "../button/BasketBtn";
+import SearchInput from "../search/SearchInput";
 
 const data = [
   {
@@ -33,12 +34,12 @@ const MobileNavbar = () => {
   const showSidebar = () => setSidebar(!sidebar);
   return (
     <div className={style.mobile_header}>
-        <img src={menu} onClick={showSidebar} />
+      <img src={menu} onClick={showSidebar} />
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
         <ul className="nav-menu-items" onClick={showSidebar}>
           <div className={style.menu_head}>
             <h4>Меню</h4>
-            <img src={close} className={style.close_img}/>
+            <img src={close} className={style.close_img} />
           </div>
           {data.map((item, index) => {
             return (
@@ -49,19 +50,19 @@ const MobileNavbar = () => {
               </li>
             );
           })}
-          <hr style={{width: '105px'}}/>
-          <FavoritesBtn/>
-          <BasketBtn/>
+          <hr style={{ width: "105px" }} />
+          <FavoritesBtn />
+          <BasketBtn />
           <div className={style.bottom_item}>
             Свяжитсь с нами:
             <p className={style.tel}>
-            Тел. <a href="tel:+996000000000">+996 000 00 00 00</a>
-          </p>
+              Тел. <a href="tel:+996000000000">+996 000 00 00 00</a>
+            </p>
           </div>
         </ul>
       </nav>
-      <Link to={'/'}>
-      <img src={logo} className={style.mobile_logo} />
+      <Link to={"/"}>
+        <img src={logo} className={style.mobile_logo} />
       </Link>
       <BiSearch className={style.mobile_search} />
     </div>

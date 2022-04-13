@@ -1,17 +1,16 @@
 .icons {
     width: 36px;
-    margin-right: 5px;
+    /* margin-right: 5px; */
 }
 
 .modal_wrap {
-    margin: 10px;
+    margin: 17px;
 }
 
 .modal_block {
-    width: 360px;
     align-items: flex-start;
     text-align: start;
-    padding: 18px;
+    padding: 0 28px;
 }
 
 .theme {
@@ -37,5 +36,9 @@
 }
 
 #button {
-    width: 330px;
+    width: 350px;
+}
+
+input:focus {
+    outline: none;
 }

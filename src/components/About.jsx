@@ -1,43 +1,34 @@
-import React from "react";
-import style from '../assets/styles/about.module.css'
-import image from "../assets/images/about.png";
-import image2 from "../assets/images/about1.png";
-import image3 from "../assets/images/about2.png";
+import React, { useEffect, useState } from "react";
+import style from "../assets/styles/about.module.css";
 import FloatingBtn from "./FloatingButton/FloatingBtn";
+import { getInfo } from "../container/httpRequest";
 
 const About = () => {
+  const [data, setData] = useState({});
+
+  const getFooterInfo = async () => {
+    const fetchData = await getInfo();
+    setData(fetchData[0].about);
+  };
+
+  useEffect(() => {
+    getFooterInfo();
+  }, []);
   return (
-    <div className={style.container}>
+    <section className={style.container}>
       <div className={style.about_photos}>
-        <img src={image} className={style.photo} />
+        <img src={data.img1} className={style.photo} />
         <div>
-          <img src={image2}  className={style.about_photo}/>
-          <img src={image3} className={style.girl_face}/>
+          <img src={data.img2} className={style.about_photo} />
+          <img src={data.img3} className={style.girl_face} />
         </div>
       </div>
       <div className={style.about}>
-        <h2>О нас</h2>
-        <p>
-          У нас Вы найдёте всё, что Вам так нужно. Ассортимент магазина
-          постоянно расширяется и дополняется в зависимости от пожеланий
-          клиентов. Женская одежда из наших коллекций – это комфортная, стильная
-          и качественная одежда не только на каждый день, но и для любых
-          ситуаций по доступным ценам.Натуральные материалы, продуманные
-          силуэты, современный дизайн и возможность легкого сочетания моделей
-          помогут Вам всегда оставаться в центре внимания и чувствовать себя
-          уместно в любой ситуации. Если Вы любите одеваться ярко, модно и
-          оригинально, у нас Вы найдете все необходимое, чтобы всегда быть в
-          центре внимания. У нас большая коллекция для любого торжества и
-          праздника, которая сможет удовлетворить вкус самой взыскательной
-          модницы! А для деловых ситуаций, в которых Вам непременно нужно
-          выглядеть элегантно и стильно, мы предлагаем Вам одежду из коллекции
-          "деловой стиль и офис". Мода постоянно диктует нам свои требования и
-          для современной девушки, желающей идти в ногу со временем, важно иметь
-          возможность постоянно пополнять свой гардероб стильной одеждой.
-        </p>
+        <h2>{data.title}</h2>
+        <p>{data.text}</p>
       </div>
-      <FloatingBtn/>
-    </div>
+      <FloatingBtn />
+    </section>
   );
 };
 

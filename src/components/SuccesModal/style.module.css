@@ -1,0 +1,9 @@
+.modal_wrap {
+    padding: 28px 24px;
+    align-items: center;
+    text-align: center;
+}
+
+#btn {
+    max-width: 300px;
+}

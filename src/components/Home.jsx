@@ -16,7 +16,7 @@ const Home = () => {
       <NewClothes />
       <GetCollections />
       <Advantages />
-      <ScrollToTop/>
+      <ScrollToTop />
       <FloatingBtn />
     </div>
   );

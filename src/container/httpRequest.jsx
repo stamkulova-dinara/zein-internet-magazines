@@ -9,7 +9,7 @@ const sendHttpRequest = (method, url, data = null,) => {
     if (method === 'POST' || method === 'PUT') {
 		params.body = JSON.stringify(data)
 	}
-    console.log(params)
+    // console.log(params)
 	return fetch(url, params).then((response) => {
 		if (response.status === 400) {
 			return response.json().then((errResData) => {
@@ -70,8 +70,38 @@ export const getProductById=(productId)=>{
         })
 }
 
-export const postCallBack=(productId)=>{
-    return sendHttpRequest('POST', 'https://623c10012e056d1037f94796.mockapi.io/api/v1/call_back')
+export const postCallBack=(data)=>{
+    return sendHttpRequest('POST', 'https://623c10012e056d1037f94796.mockapi.io/api/v1/call_back', data)
+        .then(responData=>{
+            return responData
+        })
+        .catch(err=>{
+            return null
+        })
+}
+
+export const postCheckout=(data)=>{
+    return sendHttpRequest('POST', 'https://623c659f8e9af58789508891.mockapi.io/checkout', data)
+        .then(responData=>{
+            return responData
+        })
+        .catch(err=>{
+            return null
+        })
+}
+
+export const getNews = (page) => {
+    return sendHttpRequest('GET', `https://623c10012e056d1037f94796.mockapi.io/api/v1/news?p=1&l=${page}`)
+        .then(responData=>{
+            return responData
+        })
+        .catch(err=>{
+            return null
+        })
+}
+
+export const getInfo = () => {
+    return sendHttpRequest('GET', 'https://623c659f8e9af58789508891.mockapi.io/zeon') 
         .then(responData=>{
             return responData
         })

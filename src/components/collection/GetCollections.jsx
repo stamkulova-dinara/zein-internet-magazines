@@ -15,7 +15,6 @@ const GetCollections = () => {
 
   useEffect(() => {
     getCollections();
-    console.log(collections);
   }, [limit]);
 
   return (
@@ -24,14 +23,22 @@ const GetCollections = () => {
         <h3>Коллекция</h3>
       </div>
       <div className={style.cards}>
-        {(collections) ? collections.slice(0, limit).map((el) => (
-            <CollectionCard collection={el} key={el.id}/>
-          )) : <div>Loading...</div>}
+        {collections ? (
+          collections
+            .slice(0, limit)
+            .map((el) => <CollectionCard collection={el} key={el.id} />)
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
       <div id={style.btn}>
-          <Button variant="dark" id={style.button_page} onClick={()=>setLimit(limit+4)}>
-            Ещё
-          </Button>{" "}
+        <Button
+          variant="dark"
+          id={style.button_page}
+          onClick={() => setLimit(limit + 4)}
+        >
+          Ещё
+        </Button>{" "}
       </div>
     </div>
   );

@@ -11,10 +11,10 @@ const Favorites = () => {
   useEffect(() => {
     const favorite = localStorage.getItem("favorite");
     setFavorites(JSON.parse(favorite));
-  }, [favorites]);
+  }, []);
 
   return (
-    <div className={style.content}>
+    <section className={style.content}>
       <h2>Избранное</h2>
       {favorites.length !== 0 ? (
         <>
@@ -37,7 +37,7 @@ const Favorites = () => {
       )}
       <ScrollToTop />
       <FloatingBtn />
-    </div>
+    </section>
   );
 };
 

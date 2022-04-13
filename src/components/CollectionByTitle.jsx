@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import style from "../assets/styles/content.module.css";
+import { getProduct } from "../container/httpRequest";
 import Card from "./card/Card";
 import Similar from "./card/Similar";
 import FloatingBtn from "./FloatingButton/FloatingBtn";
@@ -16,11 +17,8 @@ const CollectionByTitle = () => {
   const pagesVisited = pageNumber * limitPerPage;
 
   const getCollectionById = async () => {
-    const fetchData = await fetch(
-      "https://623c10012e056d1037f94796.mockapi.io/api/v1/products"
-    );
-    const jsonData = await fetchData.json();
-    setCollectionByTitle(jsonData);
+    const fetchData = await getProduct();
+    setCollectionByTitle(fetchData);
   };
 
   useEffect(() => {
@@ -31,11 +29,7 @@ const CollectionByTitle = () => {
     (item) => item.collectionId === id
   );
 
-  const newProducts = collectionByTitle.filter(
-    (item) => item.status === 'new'
-  );
-
-  console.log(newProducts)
+  const newProducts = collectionByTitle.filter((item) => item.status === "new");
 
   const displayProducts = collectioProducts
     .slice(pagesVisited, pagesVisited + limitPerPage)
@@ -48,19 +42,19 @@ const CollectionByTitle = () => {
   };
 
   return (
-    <div className={style.content}>
+    <section className={style.content}>
       <div className={style.swiper_wrap}>{displayProducts}</div>
       <Pagination pageCount={pageCount} changePage={changePage} />
       <div className={style.new_clothes}>
         <h4>Новинки</h4>
         <div className={style.swiper_wrap}>
-        {newProducts.slice(0, 5).map(el => (
-          <Similar product={el} key={el.id}/>
-        ))}
+          {newProducts.slice(0, 5).map((el) => (
+            <Similar product={el} key={el.id} />
+          ))}
         </div>
       </div>
       <FloatingBtn />
-    </div>
+    </section>
   );
 };
 

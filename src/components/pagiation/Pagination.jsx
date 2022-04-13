@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 import ReactPaginate from "react-paginate";
-import style from './pagination.module.css'
-import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io'
+import style from "./pagination.module.css";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
-const Pagination = ({pageCount, changePage}) => {
+const Pagination = ({ pageCount, changePage }) => {
   return (
     <div>
-         <ReactPaginate
-        previousLabel={<IoIosArrowBack/>}
-        nextLabel={<IoIosArrowForward/>}
+      <ReactPaginate
+        previousLabel={<IoIosArrowBack />}
+        nextLabel={<IoIosArrowForward />}
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName={style.paginationBttns}
@@ -18,7 +18,7 @@ const Pagination = ({pageCount, changePage}) => {
         activeClassName={style.paginationActive}
       />
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;

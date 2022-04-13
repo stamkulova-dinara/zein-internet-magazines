@@ -5,8 +5,14 @@ import { Link } from "react-router-dom";
 import BasketBtn from "../button/BasketBtn";
 import FavoritesBtn from "../button/FavoritesBtn";
 import SearchInput from "../search/SearchInput";
+import BreadCrp from "../breadcrumb/BreadCrp";
 
-const Header = ({setSearchResult, searchResult, setSearchValue, searchValue}) => {
+const Header = ({
+  setSearchResult,
+  searchResult,
+  setSearchValue,
+  searchValue,
+}) => {
   return (
     <header className={style.header}>
       <div className={style.nav_top}>
@@ -33,10 +39,15 @@ const Header = ({setSearchResult, searchResult, setSearchValue, searchValue}) =>
         <Link to={"/"}>
           <img src={logotip} alt="" className={style.header_logo} />
         </Link>
-        <SearchInput setSearchResult={setSearchResult} searchResult={searchResult} setSearchValue={setSearchValue}/>
-        <FavoritesBtn/>
-        <BasketBtn/>
+        <SearchInput
+          setSearchResult={setSearchResult}
+          searchResult={searchResult}
+          setSearchValue={setSearchValue}
+        />
+        <FavoritesBtn />
+        <BasketBtn />
       </div>
+      <BreadCrp />
     </header>
   );
 };
