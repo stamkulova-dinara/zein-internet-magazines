@@ -32,8 +32,6 @@ const BackCall = () => {
     }
   };
 
-  console.log(state);
-
   const handleSubmit = async () => {
     const res = await postCallBack(state);
     console.log(res);
@@ -75,6 +73,7 @@ const BackCall = () => {
                 <Button
                   onClick={handleSubmit}
                   disabled={stateBtn}
+                  variant={(stateBtn) ? "secondary" : "dark"}
                   id={style.button}
                 >
                   Заказать звонок

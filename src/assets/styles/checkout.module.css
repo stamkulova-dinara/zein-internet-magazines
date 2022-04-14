@@ -56,3 +56,8 @@
     width: 392px;
     margin-top: 10px;
 }
+
+.check_box {
+    accent-color: #000;
+    margin-right: 5px;
+}

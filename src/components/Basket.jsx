@@ -90,7 +90,7 @@ const Basket = () => {
         </div>
         <Checkout />
       </div>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
     </section>
   );
 };

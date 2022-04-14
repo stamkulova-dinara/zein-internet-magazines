@@ -5,12 +5,21 @@ import style from "../../assets/styles/basket.module.css";
 const BasketCard = ({ product, del, getCount, sumTotal, totalPro }) => {
   const [count, setCount] = useState(1);
 
-  const removeCountHandler = () => {
+  const handleDecrement = () => {
     if (count === 1) {
       return;
     }
     setCount(count - 1);
     getCount(1, "minus");
+    sumTotal(product.price, "minus");
+    totalPro(product.oldPrice, "minus");
+  };
+
+  const handleIncrement = () => {
+    getCount(1, "plus");
+    setCount(count + 1);
+    sumTotal(product.price, "plus");
+    totalPro(product.oldPrice, "plus");
   };
 
   useEffect(() => {
@@ -43,17 +52,12 @@ const BasketCard = ({ product, del, getCount, sumTotal, totalPro }) => {
             </span>
           </h6>
           <div className={style.count}>
-            <button onClick={removeCountHandler} className={style.product_btn}>
+            <button onClick={handleDecrement} className={style.product_btn}>
               -
             </button>
             <h5 className={style.product_count}>{count}</h5>
             <button
-              onClick={() => {
-                getCount(1, "plus");
-                setCount(count + 1);
-                sumTotal(product.price, "plus");
-                totalPro(product.oldPrice, "plus");
-              }}
+              onClick={handleIncrement}
               className={style.product_btn}
             >
               +

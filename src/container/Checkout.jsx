@@ -17,6 +17,7 @@ const Checkout = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
+  const [stateBtn, setStateBtn] = useState(true)
 
   const handleSubmit = async () => {
     let data = { name, surname, mail, phoneNumber, country, city };
@@ -44,6 +45,12 @@ const Checkout = () => {
     }
   };
 
+  const handleChecked = (e) => {
+    if (e.target.checked == true) {
+      setStateBtn(false)
+    }
+  }
+ 
   const toggleModal = () => {
     setModal(!modal);
   };
@@ -78,32 +85,16 @@ const Checkout = () => {
                 />
               </div>
               <div className={style.box_input}>
-                {emailError ? (
-                  <>
-                    <label style={{ color: "red" }}>Электронная почта</label>
+                    <label style={(emailError) ? {color: "red"} : null}>Электронная почта</label>
                     <input
                       className={style.input}
                       placeholder="example@mail.com"
                       type="email"
                       value={mail}
                       name="email"
-                      style={{ border: "1px solid red" }}
+                      style={(emailError) ?{border: "1px solid red"}: null}
                       onChange={(e) => handleInputchange(e)}
                     />
-                  </>
-                ) : (
-                  <>
-                    <label>Электронная почта</label>
-                    <input
-                      className={style.input}
-                      placeholder="example@mail.com"
-                      type="email"
-                      value={mail}
-                      name="email"
-                      onChange={(e) => handleInputchange(e)}
-                    />
-                  </>
-                )}
               </div>
               <div className={style.box_input}>
                 <label>Ваш номер телефона</label>
@@ -129,11 +120,13 @@ const Checkout = () => {
                   className={style.input}
                   placeholder="Введите город"
                   value={city}
-                  onChange={(e) => setCity(e.target.value)}
+                  onChange={(e) => 
+                    setCity(e.target.value)
+                  }
                 />
               </div>
               <div className={style.box_check}>
-                <input type="checkbox" className={style.check_box} />
+                <input type="checkbox" className={style.check_box} onChange={handleChecked}/>
                 <h6>
                   Согласен с условиями{" "}
                   <Link to={"/offer"} style={{ color: "blue" }}>
@@ -144,7 +137,7 @@ const Checkout = () => {
               <Button
                 id={style.button}
                 onClick={handleSubmit}
-                variant="secondary"
+                variant={(stateBtn) ? "secondary" : "dark"}
               >
                 Заказать
               </Button>{" "}
