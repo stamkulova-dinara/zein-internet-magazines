@@ -12,8 +12,8 @@ import Favorites from "./components/Favorites";
 import Basket from "./components/Basket";
 import Offer from "./components/Offer";
 import SearchResult from "./components/SearchResult";
-import Navbar from "./components/header/Navbar";
 import { useState } from "react";
+import Header from "./components/header/Header";
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar
+        <Header
           setSearchResult={setSearchResult}
           searchResult={searchResult}
           setSearchValue={setSearchValue}

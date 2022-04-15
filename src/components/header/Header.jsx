@@ -6,15 +6,16 @@ import BasketBtn from "../button/BasketBtn";
 import FavoritesBtn from "../button/FavoritesBtn";
 import SearchInput from "../search/SearchInput";
 import BreadCrp from "../breadcrumb/BreadCrp";
+import MobileNavbar from "./MobileNavbar";
 
 const Header = ({
   setSearchResult,
   searchResult,
-  setSearchValue,
-  searchValue,
+  setSearchValue
 }) => {
   return (
     <header className={style.header}>
+      <div className={style.desktop}>
       <div className={style.nav_top}>
         <div className={style.nav_menu}>
           <ul>
@@ -46,6 +47,10 @@ const Header = ({
         />
         <FavoritesBtn />
         <BasketBtn />
+      </div>
+      </div>
+      <div className={style.mobile}>
+          <MobileNavbar/>
       </div>
       <BreadCrp />
     </header>

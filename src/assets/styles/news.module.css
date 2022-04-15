@@ -1,14 +1,17 @@
 .news_content {
     background-color: #ECECEC;
-    padding: 10px 90px;
+    padding: 1% 7%;
+    width: 100%;
 }
 
 .card_news {
-    display: flex;
-    /* flex-wrap: wrap; */
     background-color: white;
     padding: 15px;
     margin-bottom: 8px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    width: 100%;
 }
 
 .image_news {
@@ -18,4 +21,29 @@
 
 .info_news {
     margin-left: 15px;
+}
+
+@media (max-width: 500px) {
+    .card_news {
+        /* background-color: white; */
+        padding: 10px;
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* width: 100%; */
+    }
+
+    .image_news {
+        width: 264px;
+        height: 226px;
+    }
+
+    .info_news {
+        overflow: hidden;
+        height: 115px;
+        margin-top: 15px;
+        width: 256px;
+        margin-left: 0;
+    }
 }

@@ -1,37 +1,57 @@
 .container {
     display: flex;
-    /* flex-wrap: wrap; */
-    /* justify-content: space-between; */
-    padding: 20px 90px;
-    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 3% 7%;
+    /* position: relative; */
     background: #ECECEC;
     font-family: 'Montserrat';
-}
-
-.about_photos {
     width: 100%;
 }
 
 .girl_face {
     position: absolute;
     margin-left: 10px;
-    bottom: 200px;
-    width: 320px;
+    top: 400px;
+    bottom: 10px;
+    width: 25%;
 }
 
 .about {
-    margin-top: 140px;
-    margin-left: 370px;
+    margin-top: 60px;
+    width: 450px;
     padding: 0 24px;
     background: white;
+    height: 700px;
 }
 
 .about_photo {
    margin-top: 10px;
-   width: 320px;
-   margin-bottom: 50px;
+   width: 100%;
+   margin-bottom: 40px;
 }
 
 .photo {
-    width: 320px;
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    .photo {
+        width: 140px;
+    }
+
+    .about_photo {
+        width: 140px;
+     }
+     .girl_face {
+        margin-left: 10px;
+        top: 200px;
+        width: 140px;
+    }
+    .about {
+        margin-top: 0;
+        padding: 0 24px;
+        background: white;
+        height: 1000px;
+    }
 }

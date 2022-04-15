@@ -3,6 +3,8 @@ import style from "../assets/styles/content.module.css";
 import { getProduct } from "../container/httpRequest";
 import { Button } from "react-bootstrap";
 import Card from "./card/Card";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const Hit = () => {
   const [saleClothes, setSaleClothes] = useState([]);
@@ -36,6 +38,23 @@ const Hit = () => {
           <div>Loading...</div>
         )}
       </div>
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+        className={style.mobile_swiper}
+      >
+        {saleProducts ? (
+          saleProducts.slice(0, limit).map((item, index) => (
+            <SwiperSlide className={style.mobile_slider}>
+              <Card product={item} key={index} />
+            </SwiperSlide>
+          ))
+        ) : (
+          <div>Loading...</div>
+        )}
+      </Swiper>
       <div className={style.btn}>
         {limit === 8 ? (
           <Button variant="dark" onClick={() => setLimit(limit + 8)}>

@@ -17,16 +17,11 @@
   }
   
   .paginationBttns a:hover {
-    color: white;
+    color: white !important;
     background-color: #000;
   }
   
   .paginationActive a {
-    color: white;
+    color: white !important;
     background-color: #000;
   }
-  
-  /* .paginationDisabled a {
-    color: grey;
-    background-color: grey;
-  } */

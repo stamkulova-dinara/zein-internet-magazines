@@ -1,7 +1,7 @@
 footer {
     background: #1D1D1B;
     width: 100%;
-    padding: 2% 7%;
+    padding: 1% 7%;
     color: #E2E2E2;
     font-family: 'Montserrat', sans-serif;
 }
@@ -18,7 +18,7 @@ footer {
 
 h5 {
     padding-left: 30px;
-    margin-top: 15px;
+    margin: 15px 0;
 }
 
 .footer_main ul {
@@ -27,6 +27,8 @@ h5 {
 
 .footer_main ul li {
     color: #E2E2E2;
+    margin-bottom: 13px;
+    font-size: 14px;
 }
 
 .only_view_mob {

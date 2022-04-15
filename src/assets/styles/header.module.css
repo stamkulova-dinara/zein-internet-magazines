@@ -117,7 +117,6 @@ a:hover {
     background: white;
     width: 100%;
     top: 45px;
-    border: 1px solid #d3d3d3;
     z-index: 5;
     border-top: none;
     overflow: auto;
@@ -128,7 +127,7 @@ a:hover {
     padding: 10px 0;
     list-style: none;
     border-top: none;
-    margin: 0 24px;
+    margin: 0 20px;
     border-bottom: 1px solid #EEEEEE;
 }
 
@@ -139,6 +138,10 @@ a:hover {
     height: 42px;
 }
 
+.mobile {
+    display: none;
+}
+
 @media (max-width: 1115px) {
     .search_icon {
         display: none;
@@ -146,5 +149,15 @@ a:hover {
 
     .search {
         display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
     }
 }

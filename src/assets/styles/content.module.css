@@ -42,3 +42,21 @@
 .new_clothes {
     margin-top: 50px;
 }
+
+.mobile_swiper {
+    display: none;
+}
+
+.mobile_slider {
+    width: 262px;
+}
+
+@media (max-width: 700px) {
+    .swiper_wrap {
+        display: none;
+    }
+
+    .mobile_swiper {
+        display: block;
+    }
+}

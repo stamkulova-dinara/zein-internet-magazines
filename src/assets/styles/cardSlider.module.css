@@ -1,6 +1,7 @@
 .card_slider{
     background: white;
     margin-bottom: 8px;
+    width: 286px;
 }
 
 .card_slider:hover {

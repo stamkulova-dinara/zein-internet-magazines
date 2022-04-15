@@ -17,10 +17,12 @@ const About = () => {
   return (
     <section className={style.container}>
       <div className={style.about_photos}>
+        <div>
         <img src={data.img1} className={style.photo} />
         <div>
           <img src={data.img2} className={style.about_photo} />
           <img src={data.img3} className={style.girl_face} />
+        </div>
         </div>
       </div>
       <div className={style.about}>
