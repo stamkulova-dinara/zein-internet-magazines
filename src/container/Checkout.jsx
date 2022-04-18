@@ -7,7 +7,7 @@ import { Button } from "react-bootstrap";
 import { postCheckout } from "./httpRequest";
 import SuccessModal from "../components/SuccesModal/SuccessModal";
 
-const Checkout = () => {
+const Checkout = ({price, sale, totalPayable }) => {
   const [modal, setModal] = useState(false);
   const [stateModal, setStateModal] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -20,7 +20,7 @@ const Checkout = () => {
   const [stateBtn, setStateBtn] = useState(true)
 
   const handleSubmit = async () => {
-    let data = { name, surname, mail, phoneNumber, country, city };
+    let data = { name, surname, mail, phoneNumber, country, city, price, sale, totalPayable };
     const fetchData = await postCheckout(data);
     console.log(fetchData);
     if (!fetchData.id) {

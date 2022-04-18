@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import "../../assets/styles/header.css";
 import FavoritesBtn from "../button/FavoritesBtn";
 import BasketBtn from "../button/BasketBtn";
+import SearchInput from "../search/SearchInput";
 
 const data = [
   {
@@ -27,7 +28,7 @@ const data = [
   },
 ];
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ setSearchResult, searchResult, setSearchValue }) => {
   const [sidebar, setSidebar] = useState(false);
   const [search, setSearch] = useState(false);
 
@@ -71,14 +72,11 @@ const MobileNavbar = () => {
       )}
       {(search) && (
         <div className={style.search_block}>
-          <div className={style.search}>
-        <input className={style.input} placeholder="Поиск..."/>
-        <Link to={"/search"}>
-        <button className={style.searchs_btn}>
-          <BiSearch className={style.search_icon} />
-        </button>
-      </Link>
-      </div>
+          <SearchInput 
+              onClick={() => setSearch(false)} 
+              setSearchResult={setSearchResult}
+              searchResult={searchResult}
+              setSearchValue={setSearchValue}/>
         </div>
       )}
     </div>

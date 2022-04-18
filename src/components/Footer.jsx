@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import style from "../assets/styles/footer.module.css";
-import logotipForFooter from "../assets/icon/logo-footer.png";
 import { Link } from "react-router-dom";
 import instagramIcon from "../assets/icon/instagram.png";
 import telegramIcon from "../assets/icon/telegram.png";
@@ -25,7 +24,7 @@ const Footer = () => {
       <div className={style.footer_main}>
         <div>
           <Link to={"/"}>
-            <img src={logotipForFooter} className={style.footer_logo} />
+            <img src={data.logo2} className={style.footer_logo} />
           </Link>
           <p className={style.footer_madeIn}>Developed by Zeon 2022</p>
         </div>

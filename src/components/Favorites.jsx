@@ -16,7 +16,7 @@ const Favorites = () => {
   return (
     <section className={style.content}>
       <h2>Избранное</h2>
-      {favorites.length !== 0 ? (
+      {favorites?.length !== 0 ? (
         <>
           <p className={style.product_length}>
             Товаров в избранном: {favorites.length}

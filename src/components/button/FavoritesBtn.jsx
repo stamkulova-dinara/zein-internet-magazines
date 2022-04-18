@@ -13,7 +13,7 @@ const FavoritesBtn = () => {
   return (
     <div className={style.navItem}>
         <Link to={"/favorites"}>
-        {favorites.length !== 0 ? (<div className={style.notification}></div>) : null}
+        {favorites?.length !== 0 ? (<div className={style.notification}></div>) : null}
             <FiHeart className={style.icon}/>
             Избранное
         </Link>

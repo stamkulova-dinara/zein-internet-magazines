@@ -21,8 +21,7 @@ const News = () => {
 
   useEffect(() => {
     if (fetching) {
-      axios
-        .get(
+      fet(
           `https://623c10012e056d1037f94796.mockapi.io/api/v1/news?p=1&l=${currentPage}`
         )
         .then((response) => {

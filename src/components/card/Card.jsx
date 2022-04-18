@@ -62,10 +62,9 @@ const Card = ({ product }) => {
       </div>
       <Link to={`/collections/${product.collectionId}/product/` + product.id}>
         <Swiper
-          modules={[Scrollbar, Autoplay, A11y]}
+          modules={[Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}
-          autoplay={true}
           scrollbar={{ draggable: true }}
           className={style.swipers}
         >

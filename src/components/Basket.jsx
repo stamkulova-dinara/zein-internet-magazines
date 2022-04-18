@@ -37,6 +37,9 @@ const Basket = () => {
   const sale = total - sum;
 
   useEffect(() => {
+    if(localStorage.getItem('basket')===null){
+      return null
+    }
     const basket = localStorage.getItem("basket");
     setBasketProduct(JSON.parse(basket));
   }, []);
@@ -54,7 +57,7 @@ const Basket = () => {
   return (
     <section className={style.content}>
       <div className={style.products}>
-        {basketProduct.map((el) => (
+        {basketProduct?.map((el) => (
           <BasketCard
             product={el}
             key={el.id}
@@ -88,7 +91,7 @@ const Basket = () => {
           <p>Итого к оплате:</p>
           <p className={style.order_text}>{sum} рублей</p>
         </div>
-        <Checkout />
+        <Checkout price={total} sale={sale} totalPayable={sum} />
       </div>
       {/* <ScrollToTop /> */}
     </section>

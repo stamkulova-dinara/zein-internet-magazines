@@ -1,8 +1,0 @@
-.slider_image {
-    height: 400px;
-    width: 100%;
-}
-
-@media (max-width: 500px) {
-    height: 200px;
-}

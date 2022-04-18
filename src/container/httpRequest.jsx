@@ -81,7 +81,7 @@ export const postCallBack=(data)=>{
 }
 
 export const postCheckout=(data)=>{
-    return sendHttpRequest('POST', 'https://623c659f8e9af58789508891.mockapi.io/checkout', data)
+    return sendHttpRequest('POST', 'https://62473fe84bd12c92f4fe0f68.mockapi.io/api/v1/checkout', data)
         .then(responData=>{
             return responData
         })
@@ -102,6 +102,16 @@ export const getNews = (page) => {
 
 export const getInfo = () => {
     return sendHttpRequest('GET', 'https://623c659f8e9af58789508891.mockapi.io/zeon') 
+        .then(responData=>{
+            return responData
+        })
+        .catch(err=>{
+            return null
+        })
+}
+
+export const getAdvantages = () => {
+    return sendHttpRequest('GET', 'https://62473fe84bd12c92f4fe0f68.mockapi.io/api/v1/advatages') 
         .then(responData=>{
             return responData
         })

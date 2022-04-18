@@ -28,7 +28,7 @@ const SearchResult = ({ searchResult, searchValue }) => {
       <h4>Результаты поиска по запросу: {searchValue}</h4>
       {searchResult.length !== 0 ? (
         <>
-          <div className={style.swiper_wrap}>{displayResult}</div>
+          <div className={style.swipers}>{displayResult}</div>
           <Pagination pageCount={pageCount} changePage={changePage} />
         </>
       ) : (

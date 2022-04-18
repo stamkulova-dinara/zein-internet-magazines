@@ -14,7 +14,7 @@ const FloatingBtn = () => {
   }
   return (
     <div className={style.floating_btn}>
-      {open ? (
+      {(open) && (
         <div className={style.open}>
         <div>
           <a href='https://t.me/Zeonitcommunity' target='_blank'>
@@ -27,7 +27,7 @@ const FloatingBtn = () => {
         <img src={close} onClick={handleOpen} className={style.close_icon}/>
     </div>
     </div>
-      ) : null}
+      )}
             <img src={chatIcon} className={style.chat} onClick={handleOpen}/>
     </div>
   )

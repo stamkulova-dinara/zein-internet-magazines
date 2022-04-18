@@ -3,8 +3,9 @@ import style from "../assets/styles/content.module.css";
 import { getProduct } from "../container/httpRequest";
 import { Button } from "react-bootstrap";
 import Card from "./card/Card";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import MobileCarousel from './mobileCarousel/MobileCarousel'
 
 const NewClothes = () => {
   const [newClothes, setNewClothes] = useState([]);
@@ -31,24 +32,18 @@ const NewClothes = () => {
           <div>Loading...</div>
         )}
       </div>
-      <Swiper
-      spaceBetween={50}
-      slidesPerView={1}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-      className={style.mobile_swiper}
-    >
+      <MobileCarousel className={style.mobile_swiper}>
       {newProducts ? (
           newProducts
             .slice(0, 8)
-            .map((item, index) => (
+            .map((item) => (
       <SwiperSlide className={style.mobile_slider}>
-      <Card product={item} key={index} />
+      <Card product={item} key={item.id} />
        </SwiperSlide>
         ))) : (
           <div>Loading...</div>
             )}
-    </Swiper>
+    </MobileCarousel>
       <div className={style.btn}>
         <Button variant="dark">Ещё</Button>{" "}
       </div>

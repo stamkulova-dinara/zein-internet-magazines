@@ -7,13 +7,16 @@ const BasketBtn = () => {
   const [basketProduct, setBasketProduct] = useState([])
 
   useEffect(() => {
-      const basket = JSON.parse(localStorage.getItem('basket'))
-      setBasketProduct(basket)
+    if(localStorage.getItem('basket')===null){
+      return null
+    }
+    const basket = JSON.parse(localStorage.getItem('basket'))
+    setBasketProduct(basket)
    },[])
   return (
     <div className={style.navItem}>
         <Link to={"/basket"}>
-        {basketProduct.length !== 0 ? (<div className={style.notification}></div>) : null}
+        {basketProduct?.length !== 0 ? (<div className={style.notification}></div>) : null}
             <img src={bag} alt="icon" className={style.icon_basket}/>
             Корзина 
         </Link>

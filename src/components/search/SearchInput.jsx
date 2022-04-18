@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
-import style from "../../assets/styles/header.module.css";
+import style from "./searchInput.module.css";
 import { getProduct } from "../../container/httpRequest";
-import { BsFilterSquareFill } from "react-icons/bs";
 
 const SearchInput = ({
   setSearchResult,
-  setSearchValue
+  setSearchValue,
+  onClick
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [product, setProduct] = useState([])
@@ -44,14 +44,14 @@ const SearchInput = ({
       {(!result) ? (
         <div className={style.results}>
         {filter?.map(el=> (
-          <Link to={`/collections/${el.collectionId}/product/` + el.id}>
+          <Link to={`/collections/${el.collectionId}/product/` + el.id} onClick={onClick}>
           <p className={style.item_result} onClick={() => setResult(true)}>{el.title}</p>
           </Link>
         ))}
         </div>
       ) : null }
       <Link to={"/search"}>
-        <button className={style.searchs_btn} onClick={click}>
+        <button className={style.searchs_btn} onClick={click} >
           <BiSearch className={style.search_icon} />
         </button>
       </Link>
