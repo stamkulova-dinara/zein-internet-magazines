@@ -1,5 +1,5 @@
 .floating_btn {
-    padding: 0 7%;
+    /* padding: 0 7%; */
     position: fixed;
     bottom: 30px;
     left: 0;
@@ -8,10 +8,11 @@
     align-items: flex-end;
     text-align: end;
     z-index: 100;
+    max-width: 10px;
 }
 
 .scroll {
-    padding: 0 7%;
+    /* padding: 0 7%; */
     position: fixed;
     bottom: 60px;
     left: 0;
@@ -20,6 +21,7 @@
     align-items: flex-end;
     text-align: end;
     z-index: 100;
+    max-width: 10px;
 }
 
 .open {
@@ -41,17 +43,16 @@
 
 .top_arrow {
     font-size: 42px;
-}
-
-.top_arrow {
     cursor: pointer;
+    margin-left: 540px;
 }
 
 .chat {
     width: 25px;
     height: 25px;
     margin-top: 5px;
-    margin-right: 6px;
+    margin-left: 550px;
+    /* margin-right: 6px; */
 }
 
 .chat:hover {

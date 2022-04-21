@@ -1,7 +1,6 @@
 import React from "react";
 import style from "../../assets/styles/collection.module.css";
 import { MdArrowForwardIos } from "react-icons/md";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const CollectionCard = ({ collection }) => {
@@ -13,9 +12,9 @@ const CollectionCard = ({ collection }) => {
           <div className={style.card_title}>
             <p>{collection.collection}</p>
           </div>
-          <Button id={style.button} variant="dark">
+          <button id={style.collection_button}>
             Смотреть все <MdArrowForwardIos />
-          </Button>{" "}
+          </button>{" "}
         </div>
       </Link>
     </div>

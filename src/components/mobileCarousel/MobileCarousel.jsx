@@ -7,8 +7,7 @@ const MobileCarousel = ({children, className}) => {
     <Swiper
       spaceBetween={50}
       slidesPerView={1}
-    //   className={style.mobile_swiper}
-    className={className}
+      className={className}
     >
         {children}
     </Swiper>

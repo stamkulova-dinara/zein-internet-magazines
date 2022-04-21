@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import style from "../assets/styles/product.module.css";
-import { Button } from "react-bootstrap";
 import { FiHeart } from "react-icons/fi";
 import { TiHeartFullOutline } from "react-icons/ti";
 import bag from "../assets/icon/Icon.png";
@@ -14,6 +13,8 @@ const Product = () => {
   const [data, setData] = useState({});
   const [basketpage, setBasketPage] = useState([]);
   const [favorite, setFavorite] = useState([]);
+  const [choosenColor,setChoosenColor] = useState(null)
+  const [clickColor, setClickColor] = useState(null)
 
   const getProduct = async () => {
     const fetchData = await getProductById(params.productId);
@@ -22,6 +23,10 @@ const Product = () => {
 
   useEffect(() => {
     getProduct();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
   }, []);
 
   useEffect(() => {
@@ -44,7 +49,7 @@ const Product = () => {
     let basket = JSON.parse(localStorage.getItem("basket"));
 
     if (!basket) {
-      basket = [product];
+      basket = [];
       localStorage.setItem("basket", JSON.stringify(basket));
       return;
     }
@@ -54,7 +59,8 @@ const Product = () => {
         return;
       }
     }
-    basket.push(product);
+    let prod = {...product, choosenColor}
+    basket.push(prod);
     setBasketPage(true);
     localStorage.setItem("basket", JSON.stringify(basket));
     return;
@@ -83,6 +89,10 @@ const Product = () => {
     return;
   }
 
+  const handleChooseColor =(color, index) => {
+    setChoosenColor(color)
+    setClickColor(index);
+  }
   return (
     <section className={style.product}>
       <div className={style.product_images}>
@@ -100,17 +110,15 @@ const Product = () => {
         <div className={style.product_color}>
           <div className={style.color_theme}>Цвет:</div>
           <div className={style.color}>
-            {data?.color?.map((e) => (
-              <div
-                key={e.index}
-                style={{
-                  backgroundColor: e,
-                  borderRadius: "50%",
-                  width: "8px",
-                  height: "8px",
-                  marginLeft: "10px",
-                }}
-              ></div>
+            {data?.color?.map((e, index) => (
+              <button
+                key={index}
+                onClick={() => handleChooseColor(e, index)}
+                id={style.color_focus}
+              >
+                <p style={{backgroundColor: e
+                }}></p>
+              </button>
             ))}
           </div>
         </div>
@@ -118,26 +126,30 @@ const Product = () => {
           {data.price} p{" "}
           <span className={style.old_price}>{data.oldPrice} р.</span>
         </h4>
-        <h6>О товаре:</h6>
+        <h6 className={style.theme_prod}>О товаре:</h6>
         <p className={style.description}>{data.description}</p>
         <div className={style.info}>
+          <div>
           <div className={style.themes}>
             Размерный ряд: <span className={style.theme_info}>{data.size}</span>{" "}
-          </div>
-          <div className={style.themes}>
-            Состав ткани:{" "}
-            <span className={style.theme_info}>{data.fabric}</span>
           </div>
           <div className={style.themes}>
             Количество в линейке :
             <span className={style.theme_info}>{data.quantity}</span>
           </div>
+          </div>
+          <div>
+          <div className={style.themes}>
+            Состав ткани:{" "}
+            <span className={style.theme_info}>{data.fabric}</span>
+          </div>
           <div className={style.themes}>
             Материал: <span className={style.theme_info}>{data.fabric}</span>
           </div>
+          </div>
         </div>
         <div className={style.shopping_bag_btns}>
-          <Button
+          <button
             variant="dark"
             id={style.add_bag_btn}
             onClick={() => putProducts(data)}
@@ -150,9 +162,8 @@ const Product = () => {
                 Перейти в корзину
               </Link>
             )}
-          </Button>{" "}
-          <Button
-            variant="dark"
+          </button>{" "}
+          <button
             id={style.like_btn}
             onClick={() => favorites(data)}
           >
@@ -161,7 +172,7 @@ const Product = () => {
             ) : (
               <TiHeartFullOutline style={{ fontSize: "28px" }} />
             )}
-          </Button>{" "}
+          </button>{" "}
         </div>
       </div>
       <div className={style.similar_prod}>

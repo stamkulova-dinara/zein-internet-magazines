@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import style from "../../assets/styles/collection.module.css";
-import { Button } from "react-bootstrap";
 import { getCollection } from "../../container/httpRequest";
 import CollectionCard from "../card/CollectionCard";
 
@@ -31,14 +30,10 @@ const GetCollections = () => {
           <div>Loading...</div>
         )}
       </div>
-      <div id={style.btn}>
-        <Button
-          variant="dark"
-          id={style.button_page}
-          onClick={() => setLimit(limit + 4)}
-        >
-          Ещё
-        </Button>{" "}
+      <div className={style.btn}>
+          <button id={style.more_btn} onClick={() => setLimit(limit + 4)}>
+            Ещё
+          </button>
       </div>
     </div>
   );

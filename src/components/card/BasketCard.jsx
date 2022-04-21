@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import style from "../../assets/styles/basket.module.css";
+import close from '../../assets/icon/close.png'
 
-const BasketCard = ({ product, del, getCount, sumTotal, totalPro }) => {
+const BasketCard = ({ product, del, getCount, sumTotal, totalPro}) => {
   const [count, setCount] = useState(1);
 
   const handleDecrement = () => {
@@ -41,9 +42,11 @@ const BasketCard = ({ product, del, getCount, sumTotal, totalPro }) => {
           </p>
           <div className={style.product_color}>
             Цвет:
-            {product.color?.map((color) => (
-              <div style={{ backgroundColor: color }} id={style.colors}></div>
-            ))}
+            {product.choosenColor == null ?(
+              <div style={{ backgroundColor: product.color[0] }} id={style.colors}></div>
+            ):(
+              <div style={{ backgroundColor: product.choosenColor }} id={style.colors}></div>
+            )}
           </div>
           <h6 className={style.product_price}>
             {product.price} р{" "}
@@ -65,7 +68,7 @@ const BasketCard = ({ product, del, getCount, sumTotal, totalPro }) => {
           </div>
         </div>
       </div>
-      <FaTimes key={product.id} onClick={del} />
+      <img src={close} key={product.id} onClick={del} alt="image" id={style.close_icon}/>
     </div>
   );
 };

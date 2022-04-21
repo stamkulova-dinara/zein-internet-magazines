@@ -20,7 +20,9 @@ const Advantages = () => {
       <div className={style.advantages}>
         {data?.map(el=> (
            <div className={style.advanItem}>
+             <div className={style.img_wrap}>
            <img src={el.img} alt="photo" className={style.advanImage} />
+           </div>
            <h6>{el.title}</h6>
            <p className={style.advanInfo}>
              {el.description}

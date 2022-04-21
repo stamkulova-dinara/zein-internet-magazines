@@ -5,7 +5,7 @@ import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 const Pagination = ({ pageCount, changePage }) => {
   return (
-    <div>
+    <div className={style.pagination_wrap}>
       <ReactPaginate
         previousLabel={<IoIosArrowBack />}
         nextLabel={<IoIosArrowForward />}

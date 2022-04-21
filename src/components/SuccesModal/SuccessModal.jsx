@@ -1,6 +1,5 @@
 import React from "react";
 import successIcon from "../../assets/icon/success.png";
-import { Button } from "react-bootstrap";
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
 
@@ -16,9 +15,9 @@ const SuccessModal = ({ closeModal }) => {
       <h4>Спасибо!</h4>
       <p>Ваша заявка была принята ожидайте, скоро Вам перезвонят</p>
       <Link to={'/'}>
-      <Button variant="dark" onClick={click} id={style.btn}>
+      <button variant="dark" onClick={click} id={style.btn}>
         Продолжить покупки
-      </Button>
+      </button>
       </Link>
     </div>
   );

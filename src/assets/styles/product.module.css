@@ -1,11 +1,12 @@
 .product {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     width: 100%;
     padding: 3% 7%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: #ECECEC;
+    color: #393939;
 }
 
 .product_images {
@@ -21,7 +22,7 @@
 }
 
 .product_info {
-    background-color: white;
+    background-color: #FFFFFF;
     padding: 20px;
     width: 500px;
     height: 400px;
@@ -30,16 +31,21 @@
 
 .title{
     font-size: 24px;
+    line-height: 29px;
+    font-weight: 500 medium;
 }
 
 .theme {
     margin-bottom: 10px;
-    font-weight: 600;
+    font-weight: 500 medium;
     font-size: 14px;
+    color: #1D1D1B;
 }
 
 .art {
-    font-weight: normal;
+    font-weight: 400 Regular;
+    line-height: 14px;
+    color: #393939;
 }
 
 .product_color {
@@ -48,7 +54,11 @@
 }
 
 .color_theme {
-    font-weight: 600;
+    font-weight: 500; 
+    font-size: 14px;
+    line-height: 17px;
+    color: #1D1D1B;
+    margin-right: 6px;
 }
 
 .theme_info {
@@ -57,22 +67,56 @@
 
 .color {
     display: flex;
-    margin-top: 8px;
+}
+
+#color_focus {
+    border: none;
+    background-color: #FFFFFF;
+    width: 18px;
+    height: 18px;
+    align-items: center;
+    text-align: center;
+    padding: 3px;
+    margin-right: 3px;
+}
+
+#color_focus:focus {
+    border: 1px solid #D6D6D6;
+}
+
+#color_focus p {
+    margin-bottom: 2px;
+    border: 1px solid #D1D1D1;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
 }
 
 .price {
-    font-weight: 500;
+    font-weight: 400 Regular;
+    font-size: 24px;
+    line-height: 29px;
 }
 
 .old_price{
     text-decoration: line-through;
     color: #979797;
     font-size: 16px;
+    font-weight: 500 medium;
+    line-height: 19px;
+}
+
+.theme_prod {
+    font-size: 16px;
+    font-weight: 500 medium;
+    line-height: 19px;
+    margin-bottom: 6px;
 }
 
 .description {
     color:#6A6A6A;
     font-size: 14px;
+    font-weight: 400 Regular;
 }
 
 .info {
@@ -82,20 +126,26 @@
 }
 
 .themes {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
+    line-height: 17px;
+    color: #1D1D1B;
+    margin-bottom: 14px;
 }
 
 .shopping_bag_btns {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 
 #add_bag_btn {
     width: 80%;
-    border-radius: 0%;
+    border: none;
+    background-color: #1D1D1B;
+    height: 44px;
+    color:#FFFFFF;
 }
 
 .bag_icon {
@@ -108,7 +158,10 @@
 
 #like_btn {
     width: 17%;
-    border-radius: 0%;
+    border: none;
+    background-color: #1D1D1B;
+    height: 44px;
+    color: #FFFFFF;
 }
 
 .similar_prod {

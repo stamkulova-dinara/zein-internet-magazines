@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "../assets/styles/content.module.css";
 import { getProduct } from "../container/httpRequest";
-import { Button } from "react-bootstrap";
 import Card from "./card/Card";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -53,15 +52,9 @@ const Hit = () => {
         )}
       </MobileCarousel>
       <div className={style.btn}>
-        {limit === 8 ? (
-          <Button variant="dark" onClick={() => setLimit(limit + 8)}>
+          <button id={style.more_btn} onClick={() => setLimit(limit + 8)}>
             Ещё
-          </Button>
-        ) : (
-          <Button variant="dark" onClick={limCount}>
-            Отмена
-          </Button>
-        )}
+          </button>
       </div>
     </section>
   );

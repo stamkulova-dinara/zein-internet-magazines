@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "../assets/styles/content.module.css";
 import { getProduct } from "../container/httpRequest";
-import { Button } from "react-bootstrap";
 import Card from "./card/Card";
 import {SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -9,6 +8,7 @@ import MobileCarousel from './mobileCarousel/MobileCarousel'
 
 const NewClothes = () => {
   const [newClothes, setNewClothes] = useState([]);
+  const [limit, setLimit] = useState(8)
 
   const getNewClothes = async () => {
     const FetchData = await getProduct();
@@ -27,7 +27,7 @@ const NewClothes = () => {
       </div>
       <div className={style.swiper_wrap}>
         {newProducts ? (
-          newProducts.slice(0, 8).map((el) => <Card product={el} key={el.id} />)
+          newProducts.slice(0, limit).map((el) => <Card product={el} key={el.id} />)
         ) : (
           <div>Loading...</div>
         )}
@@ -35,7 +35,7 @@ const NewClothes = () => {
       <MobileCarousel className={style.mobile_swiper}>
       {newProducts ? (
           newProducts
-            .slice(0, 8)
+            .slice(0, limit)
             .map((item) => (
       <SwiperSlide className={style.mobile_slider}>
       <Card product={item} key={item.id} />
@@ -45,7 +45,9 @@ const NewClothes = () => {
             )}
     </MobileCarousel>
       <div className={style.btn}>
-        <Button variant="dark">Ещё</Button>{" "}
+      <button id={style.more_btn} onClick={() => setLimit(limit + 8)}>
+            Ещё
+          </button>
       </div>
     </>
   );

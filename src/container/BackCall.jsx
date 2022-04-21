@@ -5,7 +5,6 @@ import style from "../assets/styles/backCall.module.css";
 import close from "../assets/icon/close.png";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
-import { Button } from "react-bootstrap";
 import { postCallBack } from "./httpRequest";
 import SuccessModal from "../components/SuccesModal/SuccessModal";
 
@@ -70,14 +69,14 @@ const BackCall = () => {
                     onChange={(e) => handleChange(e)}
                   />
                 </div>
-                <Button
+                <button
                   onClick={handleSubmit}
                   disabled={stateBtn}
                   variant={(stateBtn) ? "secondary" : "dark"}
                   id={style.button}
                 >
                   Заказать звонок
-                </Button>{" "}
+                </button>{" "}
               </div>
             </div>
           ) : (

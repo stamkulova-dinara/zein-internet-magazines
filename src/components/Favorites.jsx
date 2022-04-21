@@ -9,6 +9,9 @@ const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
+    if(localStorage.getItem('favorite')===null){
+      return null
+    }
     const favorite = localStorage.getItem("favorite");
     setFavorites(JSON.parse(favorite));
   }, []);
@@ -21,7 +24,7 @@ const Favorites = () => {
           <p className={style.product_length}>
             Товаров в избранном: {favorites.length}
           </p>
-          <div className={style.swiper_wrap}>
+          <div className={style.swipers}>
             {favorites?.map((el) => (
               <Card product={el} key={el.id} />
             ))}

@@ -46,7 +46,7 @@
     display: flex;
 }
 
-.check_box {
+#check_box {
     width: 18px;
     height: 18px;
     color: black;
@@ -55,9 +55,12 @@
 #button {
     width: 392px;
     margin-top: 10px;
+    /* background-color: #000;
+    color: white;
+    border: none; */
 }
 
-.check_box {
-    accent-color: #000;
+#check_box {
+    accent-color: black;
     margin-right: 5px;
 }

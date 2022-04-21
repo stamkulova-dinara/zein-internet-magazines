@@ -44,6 +44,7 @@ const Header = ({ setSearchResult, searchResult, setSearchValue }) => {
             />
           </div>
           <FavoritesBtn />
+          <div id={style.ruler}></div>
           <BasketBtn />
         </div>
       </div>

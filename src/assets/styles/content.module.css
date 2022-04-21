@@ -5,11 +5,25 @@
     font-family: Montserrat;
 }
 
+.content h2 {
+    font-size: 24px;
+    font-weight: 500 medium;
+    line-height: 29px;
+}
+
 .theme {
-    margin-top: 20px;
+    margin-top: 44px;
+    margin-bottom: 18px;
     width: 100%;
     align-items: center;
     text-align: center;
+}
+
+.theme h3 {
+    font-family: Montserrat;
+    font-weight: 500 medium;
+    font-size: 24px;
+    line-height: 29px;
 }
 
 .swiper_wrap {
@@ -21,7 +35,7 @@
 
 .swipers {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -36,14 +50,20 @@
     text-align: center;
 }
 
-.btn button {
-    width: 100px;
+#more_btn {
+    width: 107px;
+    height: 32px;
+    background-color: #1D1D1B;
+    color: #FFFFFF;
+    border: none;
+    font-size: 13px;
 }
 
 .product_length{
     font-size: 14px;
     color: #979797;
-    font-weight: 500;
+    font-weight: 500 medium;
+    line-height: 17px;
 }
 
 .new_clothes {

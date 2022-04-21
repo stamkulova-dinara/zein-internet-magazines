@@ -1,5 +1,5 @@
 .navItem {
-    margin-top: 28px;
+    margin-top: 20px;
 }
 
 .notification {
@@ -15,6 +15,7 @@
 .icon {
     font-size: 24px;
     margin-right: 3px;
+    color: #515151;
 }
 
 .icon_basket {

@@ -4,7 +4,7 @@ import ScrollToTop from "./FloatingButton/ScrollToTop";
 import BasketCard from "./card/BasketCard";
 import Checkout from "../container/Checkout";
 
-const Basket = () => {
+const Basket = ({color}) => {
   const [basketProduct, setBasketProduct] = useState([]);
   const [allProduct, setAllProduct] = useState(0);
   const [sum, setSum] = useState(0);
@@ -65,10 +65,12 @@ const Basket = () => {
             getCount={getCount}
             sumTotal={sumTotal}
             totalPro={totalPro}
+            color={color}
           />
         ))}
       </div>
-      <div className={style.order_amount}>
+      {basketProduct.length !== 0 ? (
+        <div className={style.order_amount}>
         <h6 className={style.order_theme}>Сумма заказа</h6>
         <div className={style.order_product}>
           <p className={style.text_theme}>Количество линеек:</p>
@@ -91,9 +93,10 @@ const Basket = () => {
           <p>Итого к оплате:</p>
           <p className={style.order_text}>{sum} рублей</p>
         </div>
-        <Checkout price={total} sale={sale} totalPayable={sum} />
+        <Checkout price={total} sale={sale} totalPayable={sum} product={basketProduct} allProduct={allProduct}/>
       </div>
-      {/* <ScrollToTop /> */}
+      ) : <div>Корзина пусто</div>}
+      <ScrollToTop />
     </section>
   );
 };

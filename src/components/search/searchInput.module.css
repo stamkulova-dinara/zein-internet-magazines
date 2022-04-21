@@ -1,10 +1,9 @@
 .search_content {
     display: flex;
     align-items: center;
-    margin-top: 20px;
-    height: 45px;
+    margin-top: 15px;
+    height: 44px;
     width: 100%;
-    /* width: 662px; */
     border: 1px solid #e0e0e0;
     background-color: #f8f8f8;
     position: relative;
