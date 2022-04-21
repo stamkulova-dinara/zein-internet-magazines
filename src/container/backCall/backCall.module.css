@@ -9,12 +9,24 @@
 .modal_block {
     align-items: flex-start;
     text-align: start;
-    padding: 0 28px;
+    padding: 0 24px;
 }
 
-.theme {
-    font-weight: 600;
+.close_img {
+    width: 14px;
+    height: 14px;
+}
+#theme {
+    font-weight: 600 Semi Bold;
     font-size: 20px;
+    line-height: 25px;
+    color: #393939;
+}
+
+.text {
+    font-weight: 400 Regular;
+    font-size: 18px;
+    line-height: 27px;
 }
 
 .inputs {
@@ -35,7 +47,8 @@
 }
 
 #button {
-    width: 350px;
+    width: 358px;
+    border-radius: 0%;
 }
 
 input:focus {

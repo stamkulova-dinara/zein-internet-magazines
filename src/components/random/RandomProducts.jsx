@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getProduct } from "../container/httpRequest";
-import Similar from "./card/Similar";
-import style from "../assets/styles/content.module.css";
-import MobileCarousel from "./mobileCarousel/MobileCarousel";
+import { getProduct } from "../../container/httpRequest";
+import Similar from "../card/Similar";
+import style from "../../assets/styles/content.module.css";
+import MobileCarousel from "../mobileCarousel/MobileCarousel";
 import { SwiperSlide } from "swiper/react";
 
 const RandomProducts = () => {

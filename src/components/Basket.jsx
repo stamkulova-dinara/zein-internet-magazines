@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import style from "../assets/styles/basket.module.css";
 import ScrollToTop from "./FloatingButton/ScrollToTop";
 import BasketCard from "./card/BasketCard";
-import Checkout from "../container/Checkout";
+import Checkout from "../container/checkout/Checkout";
+import line from '../assets/icon/line.png'
 
 const Basket = ({color}) => {
   const [basketProduct, setBasketProduct] = useState([]);
@@ -88,14 +89,14 @@ const Basket = ({color}) => {
           <p className={style.text_theme}>Скидка:</p>
           <p className={style.order_text}>{sale} рублей</p>
         </div>
-        <hr />
+        <img src={line} className={style.line}/>
         <div className={style.order_product}>
           <p>Итого к оплате:</p>
           <p className={style.order_text}>{sum} рублей</p>
         </div>
         <Checkout price={total} sale={sale} totalPayable={sum} product={basketProduct} allProduct={allProduct}/>
       </div>
-      ) : <div>Корзина пусто</div>}
+      ) : null}
       <ScrollToTop />
     </section>
   );

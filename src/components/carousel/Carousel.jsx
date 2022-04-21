@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import {Pagination, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import style from "../assets/styles/slider.module.css";
+import style from "./slider.module.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay"
-import { getProductById } from "../container/httpRequest";
+import { getProductById } from "../../container/httpRequest";
 import { Link } from "react-router-dom";
 
 const Carousel = () => {

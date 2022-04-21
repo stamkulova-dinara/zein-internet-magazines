@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { FaTimes } from "react-icons/fa";
 import style from "../../assets/styles/basket.module.css";
 import close from '../../assets/icon/close.png'
 
@@ -37,16 +36,18 @@ const BasketCard = ({ product, del, getCount, sumTotal, totalPro}) => {
         <img src={product.image[0]} className={style.image_product} />
         <div className={style.product_info}>
           <h6 className={style.product_title}>{product.title}</h6>
-          <p className={style.product_color}>
-            Размер: <span>{product.size}</span>
+          <p className={style.product_size}>
+            Размер:<span>{product.size}</span>
           </p>
           <div className={style.product_color}>
             Цвет:
+            <div className={style.color_box}>
             {product.choosenColor == null ?(
               <div style={{ backgroundColor: product.color[0] }} id={style.colors}></div>
             ):(
               <div style={{ backgroundColor: product.choosenColor }} id={style.colors}></div>
             )}
+            </div>
           </div>
           <h6 className={style.product_price}>
             {product.price} р{" "}

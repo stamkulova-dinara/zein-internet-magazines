@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import style from "../../assets/styles/collection.module.css";
-import { getCollection } from "../../container/httpRequest";
-import CollectionCard from "../card/CollectionCard";
-import FloatingBtn from "../FloatingButton/FloatingBtn";
-import Pagination from "../pagiation/Pagination";
+import style from "../assets/styles/collection.module.css";
+import { getCollection } from "../container/httpRequest";
+import CollectionCard from "./card/CollectionCard";
+import FloatingBtn from "./FloatingButton/FloatingBtn";
+import Pagination from "./pagiation/Pagination";
 
 const Collections = () => {
   const [collection, setCollection] = useState([]);

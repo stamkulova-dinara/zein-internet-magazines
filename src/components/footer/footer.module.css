@@ -1,7 +1,7 @@
 footer {
-    background: #1D1D1B;
+    background:#1D1D1B;
     width: 100%;
-    padding: 1% 7%;
+    padding: 2% 7%;
     color: #E2E2E2;
     font-family: 'Montserrat', sans-serif;
 }
@@ -14,11 +14,16 @@ footer {
 
 .footer_logo {
     margin-bottom: 30px;
+    width: 243px;
+    height: 105px;
 }
 
 h5 {
-    padding-left: 30px;
+    padding-left: 28px;
+    font-weight: 600 Semi Bold;
     margin: 15px 0;
+    color:#E2E2E2;
+    font-size: 16px;
 }
 
 .footer_main ul {
@@ -26,13 +31,22 @@ h5 {
 }
 
 .footer_main ul li {
-    color: #E2E2E2;
+    color: #FFFFFF;
     margin-bottom: 13px;
     font-size: 14px;
+    font-weight: 400 Regular;
+    line-height: 17px;
 }
 
 .only_view_mob {
     display: none;
+}
+
+.footer_madeIn {
+    color: #B9B9B9;
+    font-weight: 400 Regular;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .icon_footer {

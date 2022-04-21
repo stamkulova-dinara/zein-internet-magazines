@@ -1,8 +1,16 @@
 .bread_wrap {
     width: 100%;
-    padding: 1% 7%;
+    padding: 22px 7% 21px 7%;
+    height: 60px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #393939;
+    font-weight: 500 medium;
 }
 
 .current_loc {
     color: #979797;
+    font-weight: 500 medium;
+    font-size: 14px;
+    line-height: 17px;
 }

@@ -1,0 +1,48 @@
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion {
+  background-color: #FFFFFF;
+  color: #393939;
+  cursor: pointer;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  outline: none;
+  height: 52px;
+  font-family: Montserrat;
+}
+
+.accordion__title {
+  font-weight: 400 Regular;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 0;
+}
+
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.accordion__content {
+  background-color:#FFFFFF;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.accordion__text {
+  font-weight: 300 Light;
+  line-height: 22px;
+  font-size: 14px;
+  padding: 0 16px 16px 16px;
+  color: #354455;
+}

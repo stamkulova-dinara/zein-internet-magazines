@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import style from "../assets/styles/content.module.css";
-import { getProduct } from "../container/httpRequest";
-import Card from "./card/Card";
+import style from "../../assets/styles/content.module.css";
+import { getProduct } from "../../container/httpRequest";
+import Card from "../card/Card";
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
-import MobileCarousel from './mobileCarousel/MobileCarousel'
+import MobileCarousel from '../mobileCarousel/MobileCarousel'
 
 const Hit = () => {
   const [saleClothes, setSaleClothes] = useState([]);

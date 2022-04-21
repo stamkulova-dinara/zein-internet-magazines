@@ -4,7 +4,7 @@ import style from './floatingBtn.module.css'
 import close from '../../assets/icon/close.png'
 import telegram2 from '../../assets/icon/telegram2.png'
 import whatsapp2 from '../../assets/icon/whatsapp2.png'
-import BackCall from '../../container/BackCall'
+import BackCall from '../../container/backCall/BackCall'
 
 const FloatingBtn = () => {
   const [open, setOpen] = useState(false)

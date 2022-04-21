@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import style from "../assets/styles/checkout.module.css";
-import ModalWindow from "../components/modal/ModalWindow";
-import close from "../assets/icon/close.png";
+import style from "./checkout.module.css";
+import ModalWindow from "../../components/modal/ModalWindow";
+import close from "../../assets/icon/close.png";
 import { Link } from "react-router-dom";
-import { postCheckout } from "./httpRequest";
-import SuccessModal from "../components/SuccesModal/SuccessModal";
+import { postCheckout } from "../httpRequest";
+import SuccessModal from "../../components/SuccesModal/SuccessModal";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Button } from 'react-bootstrap'
 
 const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
   const [modal, setModal] = useState(false);
@@ -56,6 +57,11 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
   const toggleModal = () => {
     setModal(!modal);
   };
+
+  const removeLocalStorage = () => {
+    localStorage.removeItem('basket');
+    setModal(false)
+  }
 
   useEffect(() => {
     if (
@@ -225,17 +231,18 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
                     </Link>
                   </h6>
                 </div>
-                <button
+                <Button
                   id={style.button}
                   type="submit"
                   disabled={stateBtn}
+                  variant={stateBtn ? 'secondary' : 'dark'}
                 >
                   Заказать
-                </button>{" "}
+                </Button>{" "}
               </form>
             </div>
           ) : (
-            <SuccessModal closeModal={toggleModal} />
+            <SuccessModal closeModal={removeLocalStorage} />
           )}
         </ModalWindow>
       )}

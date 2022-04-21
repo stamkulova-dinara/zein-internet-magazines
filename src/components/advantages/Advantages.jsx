@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import style from "../assets/styles/advantages.module.css";
-import { getAdvantages } from "../container/httpRequest";
+import style from "./advantages.module.css";
+import { getAdvantages } from "../../container/httpRequest";
 
 const Advantages = () => {
   const [data, setData] = useState([])

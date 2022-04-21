@@ -15,6 +15,9 @@
 }
 #modal_theme {
     padding-left: 0;
+    font-size: 20px;
+    line-height: 24px;
+    color: #393939;
 }
 
 .icon {
@@ -33,6 +36,7 @@
 .label {
     color:#808080;
     font-size: 13px;
+    margin-bottom: 4px;
 }
 
 .input {
@@ -55,9 +59,7 @@
 #button {
     width: 392px;
     margin-top: 10px;
-    /* background-color: #000;
-    color: white;
-    border: none; */
+    border-radius: 0%;
 }
 
 #check_box {

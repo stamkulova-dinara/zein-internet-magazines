@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import style from "../assets/styles/footer.module.css";
+import style from "./footer.module.css";
 import { Link } from "react-router-dom";
-import instagramIcon from "../assets/icon/instagram.png";
-import telegramIcon from "../assets/icon/telegram.png";
-import whatsappIcon from "../assets/icon/whatsapp.png";
-import phoneIcon from "../assets/icon/phone.png";
-import emailIcon from "../assets/icon/email.png";
-import { getInfo } from "../container/httpRequest";
+import instagramIcon from "../../assets/icon/instagram.png";
+import telegramIcon from "../../assets/icon/telegram.png";
+import whatsappIcon from "../../assets/icon/whatsapp.png";
+import phoneIcon from "../../assets/icon/phone.png";
+import emailIcon from "../../assets/icon/email.png";
+import { getInfo } from "../../container/httpRequest";
 
 const Footer = () => {
   const [data, setData] = useState({});

@@ -2,9 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
 import style from "../assets/styles/help.module.css";
 import { getInfo } from "../container/httpRequest";
+import AccordionComponent from "./accordion/Accordion";
 
 const Help = () => {
   const [data, setData] = useState({});
+  const [currentActiveKey, setCurrentActiveKey] = useState(null);
+
+  const toggleActiveKey = (key) => {
+    setCurrentActiveKey(currentActiveKey === key ? null : key);
+  };
+
   const getOffer = async () => {
     const fetchData = await getInfo();
     setData(fetchData[0].help);
@@ -18,16 +25,11 @@ const Help = () => {
       <img src={data.image} className={style.help_image} />
       <div className={style.help_info}>
         <h4>Помощь</h4>
-        <Accordion>
-          {data?.helpItems?.map((el, index) => (
-            <Accordion.Item eventKey={index} id={style.item} key={el.id}>
-              <Accordion.Header id={style.item_info}>
-                {el.title}
-              </Accordion.Header>
-              <Accordion.Body>{el.text}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
+        {data?.helpItems?.map((el, index) => (
+          <div id={style.item} >
+          <AccordionComponent title={el.title} content={el.text} key={index}/>
+          </div>
+        ))}
       </div>
     </section>
   );

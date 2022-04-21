@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import style from "../assets/styles/content.module.css";
-import Similar from "./card/Similar";
+import style from "../../assets/styles/content.module.css";
+import Similar from "../card/Similar";
 
 const SimilarProduct = ({ id }) => {
   const [similar, setSimilar] = useState([]);

@@ -4,14 +4,24 @@
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    padding: 3% 7%;
+    padding: 11px 7% 72px 7%;
 }
 
 #item {
     margin-bottom: 10px;
+    background-color: #FFFFFF;
+    width: 644px;
+}
+
+.help_info h4 {
+    font-weight: 500 medium;
+    font-size: 24px;
+    line-height: 29px;
+    color: #393939;
+    margin-bottom: 15px;
 }
 
 .help_image {
-    width: 40%;
-    height: 40%;
+    width: 500px;
+    height: 500px;
 }

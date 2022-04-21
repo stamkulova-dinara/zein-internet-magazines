@@ -6,7 +6,7 @@ import { TiHeartFullOutline } from "react-icons/ti";
 import bag from "../assets/icon/Icon.png";
 import { getProductById } from "../container/httpRequest";
 import { Link } from "react-router-dom";
-import SimilarProduct from "./SimilarProduct";
+import SimilarProduct from "./similar/SimilarProduct";
 
 const Product = () => {
   const params = useParams();

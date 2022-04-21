@@ -3,7 +3,7 @@ import Card from "./card/Card";
 import style from "../assets/styles/content.module.css";
 import FloatingBtn from "./FloatingButton/FloatingBtn";
 import ScrollToTop from "./FloatingButton/ScrollToTop";
-import RandomProducts from "./RandomProducts";
+import RandomProducts from "./random/RandomProducts";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);

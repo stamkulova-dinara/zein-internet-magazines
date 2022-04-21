@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "../assets/styles/content.module.css";
 import Card from "./card/Card";
 import Pagination from "./pagiation/Pagination";
-import RandomProducts from "./RandomProducts";
+import RandomProducts from "./random/RandomProducts";
 
 const SearchResult = ({ searchResult, searchValue }) => {
   const [pageNumber, setPageNumber] = useState(0);

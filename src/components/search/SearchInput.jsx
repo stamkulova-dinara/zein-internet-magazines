@@ -37,10 +37,11 @@ const SearchInput = ({
   const click = () => {
     setResult(true)
     setSearchValue(inputValue);
+    setInputValue("")
   }
   return (
     <div className={style.search_content}>
-      <input placeholder="Поиск..." className={style.search} onChange={handleChange}/>
+      <input placeholder="Поиск..." className={style.search} onChange={handleChange} enterKeyHint={click}/>
       {(!result) ? (
         <div className={style.results}>
         {filter?.map(el=> (

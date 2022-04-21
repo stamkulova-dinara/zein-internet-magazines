@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About";
-import Collections from "./components/collection/Collections";
+import Collections from "./components/Collections";
 import News from "./components/News";
 import Home from "./components/Home";
 import CollectionByTitle from "./components/CollectionByTitle";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 import Product from "./components/Product";
 import Help from "./components/Help";
 import Favorites from "./components/Favorites";

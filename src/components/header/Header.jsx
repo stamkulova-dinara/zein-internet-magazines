@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../../assets/styles/header.module.css";
+import style from "./header.module.css";
 import logotip from "../../assets/icon/zeon-logo.png";
 import { Link } from "react-router-dom";
 import BasketBtn from "../button/BasketBtn";
