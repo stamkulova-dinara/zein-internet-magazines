@@ -1,7 +1,7 @@
 .content {
     background: #ECECEC;
     width: 100%;
-    padding: 3% 7%;
+    padding: 11px 7%;
     font-family: Montserrat;
 }
 
@@ -44,6 +44,12 @@
     margin-top: 50px;
 }
 
+.box h4 {
+    font-size: 24px;
+    font-weight: 500 medium;
+    line-height: 29px;
+}
+
 .btn {
     margin: 10px 80px;
     align-items: center;
@@ -66,6 +72,10 @@
     line-height: 17px;
 }
 
+#similar_product {
+    margin: 32px 0 16px 0;
+}
+
 .new_clothes {
     margin-top: 50px;
 }
@@ -85,9 +95,16 @@
 
     .mobile_swiper {
         display: block;
+        width: 100%;
     }
 
     .content{
         font-size: 16px;
+    }
+    .swipers {
+        /* display: flex; */
+        justify-content: center;
+        /* flex-wrap: wrap;
+        width: 100%; */
     }
 }

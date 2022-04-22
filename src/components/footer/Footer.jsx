@@ -85,13 +85,13 @@ const Footer = () => {
               </li>
             </a>
             <a href={data.telegram} target="_blank">
-              <li className={style.mobile_none}>
+              <li>
                 <img src={telegramIcon} className={style.icon_footer} />
                 Telegram
               </li>
             </a>
             <a href={data.whatsapp} target="_blank">
-              <li className={style.mobile_none}>
+              <li>
                 <img src={whatsappIcon} className={style.icon_footer} />
                 Whatsapp
               </li>

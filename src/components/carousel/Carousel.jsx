@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay"
 import { getProductById } from "../../container/httpRequest";
 import { Link } from "react-router-dom";
+import '../header/header.css'
 
 const Carousel = () => {
   const [data, setData] = useState({})
@@ -20,7 +21,6 @@ const Carousel = () => {
     product()
   }, [])
 
-  console.log(data.image)
   return (
     <div>
       <Swiper
@@ -29,6 +29,7 @@ const Carousel = () => {
         slidesPerView={1}
         autoplay={true}
         pagination={{ clickable: true }}
+        className={style.carousels}
       >
         {data?.image?.map((el, index) => (
           <SwiperSlide key={index}>

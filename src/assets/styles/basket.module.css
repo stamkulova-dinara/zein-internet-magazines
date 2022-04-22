@@ -6,6 +6,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     min-height: 300px;
+    font-family: Montserrat;
 }
 
 .products {
@@ -112,6 +113,9 @@
 .product_count {
     padding: 0 12px;
     margin-top: 5px;
+    color: #393939;
+    font-size: 16px;
+    line-height: 19px;
 }
 
 .order_amount {
@@ -146,4 +150,35 @@
 
 .text_theme {
     margin-bottom: 10px;
+}
+
+.basket_null h2 {
+    font-size: 24px;
+    font-weight: 500 medium;
+    line-height: 29px;
+}
+
+.basket_null .description {
+    font-size: 14px;
+    color: #979797;
+    font-weight: 500 medium;
+    line-height: 17px;
+}
+
+@media (max-width: 500px) {
+    .products {
+        width: 100%;
+    }
+
+    .product_title {
+        width: 150px;
+    }
+
+    .order_amount {
+        width: 100%;
+    }
+
+    .line {
+        width: 100%;
+    }
 }

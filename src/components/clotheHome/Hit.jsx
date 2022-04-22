@@ -19,10 +19,6 @@ const Hit = () => {
     getSaleClothes();
   }, [limit]);
 
-  const limCount = () => {
-    setLimit(limit - 8);
-  };
-
   const saleProducts = saleClothes.filter((item) => item.status === "sale");
   return (
     <section>
@@ -34,12 +30,11 @@ const Hit = () => {
           saleProducts
             .slice(0, limit)
             .map((item, index) => <Card product={item} key={index} />)
-        ) : (
-          <div>Loading...</div>
-        )}
+        ) : null}
       </div>
       <MobileCarousel
         className={style.mobile_swiper}
+        perView={1.2}
       >
         {saleProducts ? (
           saleProducts.slice(0, limit).map((item, index) => (
@@ -47,9 +42,7 @@ const Hit = () => {
               <Card product={item} key={index} />
             </SwiperSlide>
           ))
-        ) : (
-          <div>Loading...</div>
-        )}
+        ) : null}
       </MobileCarousel>
       <div className={style.btn}>
           <button id={style.more_btn} onClick={() => setLimit(limit + 8)}>

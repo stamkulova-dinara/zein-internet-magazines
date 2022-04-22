@@ -8,6 +8,7 @@ const News = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(8);
   const [fetching, setfetching] = useState(true);
+  const [showMore, setShowMore] = useState(false)
 
   const scrollHandler = (e) => {
     if (
@@ -34,6 +35,10 @@ const News = () => {
   }, [fetching]);
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
     document.addEventListener("scroll", scrollHandler);
 
     return function () {
@@ -42,12 +47,18 @@ const News = () => {
   }, []);
   return (
     <section className={style.news_content}>
+      <h2>Новости</h2>
       {data.map((el) => (
         <div className={style.card_news} key={el.id}>
           <img src={el.image} className={style.image_news} />
           <div className={style.info_news}>
-            <h6>{el.title}</h6>
-            <p>{el.description}</p>
+            <h6 className={style.info_title}>{el.title}</h6>
+            <p id={style.desc}>{el.description}</p>
+          </div>
+          <div className={style.info_news_mobile}>
+            <h6 className={style.info_title}>{el.title}</h6>
+            <p className={style.info_descr}>{showMore ? el.description : `${el.description.substring(0, 135)}`}</p>
+            <button className={style.show_more_btn} onClick={() => setShowMore(!showMore)}>{!showMore ? 'Читать полностью' : 'Скрыть'}</button>
           </div>
         </div>
       ))}

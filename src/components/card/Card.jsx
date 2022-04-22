@@ -24,7 +24,7 @@ const Card = ({ product }) => {
     let favorite = JSON.parse(localStorage.getItem("favorite"));
 
     if (!favorite) {
-      favorite = [product];
+      favorite = [];
       localStorage.setItem("favorite", JSON.stringify(favorite));
       return;
     }

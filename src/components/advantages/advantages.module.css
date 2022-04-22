@@ -27,6 +27,7 @@
     align-items: center;
     text-align: center;
     font-size: 14px;
+    margin-bottom: 8px;
 }
 
 .img_wrap {
@@ -45,4 +46,12 @@
 .advanInfo {
     margin-top: 8px;
     color: #979797;
+}
+
+@media (max-width: 500px) {
+    .advantages {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

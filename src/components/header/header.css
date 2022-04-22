@@ -38,4 +38,8 @@
     width: 100%;
     padding-left: 0;
   }
+
+  .swiper-pagination-bullet-active {
+    background-color: #000 !important;
+  }
   

@@ -5,6 +5,7 @@
     justify-content: space-between;
     height: 64px;
     font-family: Montserrat;
+    border-bottom: 1px solid #EEEEEE;
 }
 
 .mobile_menu {

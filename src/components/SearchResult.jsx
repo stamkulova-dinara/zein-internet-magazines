@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import style from "../assets/styles/content.module.css";
 import Card from "./card/Card";
 import Pagination from "./pagiation/Pagination";
@@ -22,6 +22,13 @@ const SearchResult = ({ searchResult, searchValue }) => {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
+  }, [])
 
   return (
     <div className={style.content}>

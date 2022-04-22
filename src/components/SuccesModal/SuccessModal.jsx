@@ -5,10 +5,6 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
 const SuccessModal = ({ closeModal }) => {
-
-  // const click = () => {
-  //   closeModal()
-  // }
   return (
     <div className={style.modal_wrap}>
       <img src={successIcon} className={style.success_icon}/>

@@ -4,6 +4,7 @@ import ScrollToTop from "./FloatingButton/ScrollToTop";
 import BasketCard from "./card/BasketCard";
 import Checkout from "../container/checkout/Checkout";
 import line from '../assets/icon/line.png'
+import RandomProducts from "./random/RandomProducts";
 
 const Basket = ({color}) => {
   const [basketProduct, setBasketProduct] = useState([]);
@@ -38,6 +39,10 @@ const Basket = ({color}) => {
   const sale = total - sum;
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
     if(localStorage.getItem('basket')===null){
       return null
     }
@@ -57,6 +62,8 @@ const Basket = ({color}) => {
 
   return (
     <section className={style.content}>
+      {basketProduct.length !== 0 ? (
+      <>
       <div className={style.products}>
         {basketProduct?.map((el) => (
           <BasketCard
@@ -70,7 +77,6 @@ const Basket = ({color}) => {
           />
         ))}
       </div>
-      {basketProduct.length !== 0 ? (
         <div className={style.order_amount}>
         <h6 className={style.order_theme}>Сумма заказа</h6>
         <div className={style.order_product}>
@@ -96,7 +102,16 @@ const Basket = ({color}) => {
         </div>
         <Checkout price={total} sale={sale} totalPayable={sum} product={basketProduct} allProduct={allProduct}/>
       </div>
-      ) : null}
+      </>
+      ) : (
+        <div className={style.basket_null}>
+        <h2>Корзина</h2>
+        <p className={style.description}>
+          У Вас пока нет товаров в корзине
+          </p>
+          <RandomProducts />
+        </div>
+      )}
       <ScrollToTop />
     </section>
   );

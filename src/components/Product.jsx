@@ -7,6 +7,8 @@ import bag from "../assets/icon/Icon.png";
 import { getProductById } from "../container/httpRequest";
 import { Link } from "react-router-dom";
 import SimilarProduct from "./similar/SimilarProduct";
+import MobileCarousel from "./mobileCarousel/MobileCarousel";
+import { SwiperSlide } from "swiper/react";
 
 const Product = () => {
   const params = useParams();
@@ -14,7 +16,6 @@ const Product = () => {
   const [basketpage, setBasketPage] = useState([]);
   const [favorite, setFavorite] = useState([]);
   const [choosenColor,setChoosenColor] = useState(null)
-  const [clickColor, setClickColor] = useState(null)
 
   const getProduct = async () => {
     const fetchData = await getProductById(params.productId);
@@ -89,19 +90,25 @@ const Product = () => {
     return;
   }
 
-  const handleChooseColor =(color, index) => {
+  const handleChooseColor =(color) => {
     setChoosenColor(color)
-    setClickColor(index);
   }
   return (
     <section className={style.product}>
       <div className={style.product_images}>
-        {data?.image?.slice(0, 4).map((el) => (
-          <div className={style.product_img} key={el.index}>
+        {data?.image?.slice(0, 4).map((el, index) => (
+          <div className={style.product_img} key={index}>
             <img src={el} className={style.product_image} />
           </div>
         ))}
       </div>
+      <MobileCarousel className={style.mobile_product_image} perView={1.2}>
+        {data?.image?.slice(0.4).map((el, index) => (
+          <SwiperSlide key={index}>
+            <img src={el} className={style.product_image} />
+          </SwiperSlide>
+        ))}
+      </MobileCarousel>
       <div className={style.product_info}>
         <h4 className={style.title}>{data.title}</h4>
         <h6 className={style.theme}>
@@ -113,7 +120,7 @@ const Product = () => {
             {data?.color?.map((e, index) => (
               <button
                 key={index}
-                onClick={() => handleChooseColor(e, index)}
+                onClick={() => handleChooseColor(e)}
                 id={style.color_focus}
               >
                 <p style={{backgroundColor: e

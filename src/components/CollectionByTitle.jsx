@@ -5,7 +5,9 @@ import { getProduct } from "../container/httpRequest";
 import Card from "./card/Card";
 import Similar from "./card/Similar";
 import FloatingBtn from "./FloatingButton/FloatingBtn";
+import MobileCarousel from "./mobileCarousel/MobileCarousel";
 import Pagination from "./pagiation/Pagination";
+import { SwiperSlide } from "swiper/react";
 
 const CollectionByTitle = () => {
   const params = useParams();
@@ -23,6 +25,10 @@ const CollectionByTitle = () => {
 
   useEffect(() => {
     getCollectionById();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
   }, []);
 
   const collectioProducts = collectionByTitle.filter(
@@ -43,7 +49,7 @@ const CollectionByTitle = () => {
 
   return (
     <section className={style.content}>
-      <div className={style.swiper_wrap}>{displayProducts}</div>
+      <div className={style.swipers}>{displayProducts}</div>
       <Pagination pageCount={pageCount} changePage={changePage} />
       <div className={style.new_clothes}>
         <h4>Новинки</h4>
@@ -52,6 +58,14 @@ const CollectionByTitle = () => {
             <Similar product={el} key={el.id} />
           ))}
         </div>
+        <MobileCarousel className={style.mobile_swiper}
+        perView={1.5}>
+          {newProducts.splice(0, 5).map(el => (
+            <SwiperSlide>
+              <Similar product={el} key={el.id} />
+            </SwiperSlide>
+          ))}
+        </MobileCarousel>
       </div>
       <FloatingBtn />
     </section>

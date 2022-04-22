@@ -2,11 +2,11 @@ import React from "react";
 import { Swiper } from 'swiper/react';
 import 'swiper/css';
 
-const MobileCarousel = ({children, className}) => {
+const MobileCarousel = ({children, className, perView}) => {
   return (
     <Swiper
       spaceBetween={50}
-      slidesPerView={1}
+      slidesPerView={perView}
       className={className}
     >
         {children}

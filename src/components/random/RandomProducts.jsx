@@ -25,7 +25,7 @@ const RandomProducts = () => {
           <Similar product={el} key={ind} />
         ))}
       </div>
-      <MobileCarousel className={style.mobile_swiper}>
+      <MobileCarousel className={style.mobile_swiper} perView={1.5}>
         {products.slice(0, 5).map((el, ind) => (
           <SwiperSlide className={style.mobile_slider}>
             <Similar product={el} key={ind} />

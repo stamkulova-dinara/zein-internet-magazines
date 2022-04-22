@@ -30,6 +30,16 @@
     flex-wrap: wrap;
 }
 
+.card_desktop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.mobile_swiper {
+    display: none;
+}
+
 .collection {
     width: 286px;
     height: 380px;
@@ -111,5 +121,21 @@
 @media screen and (max-width: 761px) and (min-width: 320px) {
     .cards_collection {
         height: 1600px;
+    }
+
+    .card_desktop {
+        display: none;
+    }
+
+    .mobile_swiper {
+        display: block;
+    }
+    .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .collection_theme {
+        margin-left: 10px;
     }
 }

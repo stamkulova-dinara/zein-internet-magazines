@@ -19,6 +19,10 @@ const Collections = () => {
 
   useEffect(() => {
     collectionData();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
   }, []);
 
   const displayCollection = collection
@@ -33,7 +37,7 @@ const Collections = () => {
 
   return (
     <div className={style.content_collection}>
-      <h4>Коллекции</h4>
+      <h4 className={style.collection_theme}>Коллекции</h4>
       <div className={style.cards}>{displayCollection}</div>
       <Pagination pageCount={pageCount} changePage={changePage} />
       <FloatingBtn />

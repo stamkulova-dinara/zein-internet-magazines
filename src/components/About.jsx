@@ -13,6 +13,10 @@ const About = () => {
 
   useEffect(() => {
     getFooterInfo();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
   }, []);
   return (
     <section className={style.container}>

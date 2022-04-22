@@ -9,6 +9,10 @@ const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
     if(localStorage.getItem('favorite')===null){
       return null
     }

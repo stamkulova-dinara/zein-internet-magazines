@@ -13,3 +13,9 @@
     width: 360px;
     border-radius: 0%;
 }
+
+@media (max-width: 500px) {
+    #btn {
+        width: 100%;
+    }
+} 

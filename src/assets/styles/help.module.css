@@ -25,3 +25,18 @@
     width: 500px;
     height: 500px;
 }
+
+@media (max-width: 500px) {
+    .help_image {
+        width: 288px;
+        height: 288px;
+    }
+
+    #item { 
+        width: 288px;
+    }
+
+    .help_info h4 {
+       margin-top: 24px;
+    }
+}

@@ -11,6 +11,10 @@ const Offer = () => {
 
   useEffect(() => {
     getOffer();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
   }, []);
   return (
     <section className={style.content}>

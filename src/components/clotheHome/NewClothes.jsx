@@ -32,7 +32,7 @@ const NewClothes = () => {
           <div>Loading...</div>
         )}
       </div>
-      <MobileCarousel className={style.mobile_swiper}>
+      <MobileCarousel className={style.mobile_swiper} perView={1.2}>
       {newProducts ? (
           newProducts
             .slice(0, limit)

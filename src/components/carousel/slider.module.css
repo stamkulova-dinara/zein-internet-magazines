@@ -3,8 +3,16 @@
     width: 100%;
 }
 
+.carousels {
+    height: 520px;
+}
+
 @media (max-width: 500px) {
     .slider_image {
         height: 200px;
+    }
+
+    .carousels {
+        height: 230px;
     }
 }

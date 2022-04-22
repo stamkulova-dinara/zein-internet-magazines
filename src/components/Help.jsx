@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Accordion } from "react-bootstrap";
 import style from "../assets/styles/help.module.css";
 import { getInfo } from "../container/httpRequest";
 import AccordionComponent from "./accordion/Accordion";
 
 const Help = () => {
   const [data, setData] = useState({});
-  const [currentActiveKey, setCurrentActiveKey] = useState(null);
-
-  const toggleActiveKey = (key) => {
-    setCurrentActiveKey(currentActiveKey === key ? null : key);
-  };
 
   const getOffer = async () => {
     const fetchData = await getInfo();
@@ -19,6 +13,10 @@ const Help = () => {
 
   useEffect(() => {
     getOffer();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' 
+    });
   }, []);
   return (
     <section className={style.help_content}>

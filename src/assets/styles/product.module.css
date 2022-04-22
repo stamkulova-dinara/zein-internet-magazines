@@ -1,7 +1,7 @@
 .product {
     font-family: Montserrat;
     width: 100%;
-    padding: 3% 7%;
+    padding: 11px 7%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -169,4 +169,22 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
+}
+
+.mobile_product_image {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .product_info {
+        height: 510px;
+    }
+
+    .product_images {
+        display: none;
+    }
+
+    .mobile_product_image {
+        display: block;
+    }
 }

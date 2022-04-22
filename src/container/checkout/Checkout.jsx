@@ -100,7 +100,7 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
               <form onSubmit={formik.handleSubmit}>
                 <div className={style.box_input}>
                   <label
-                    style={formik.errors.firstName ? { color: "red" } : null}
+                    style={formik.errors.firstName ? { color: "#E5271B" } : null}
                   >
                     Ваше имя
                   </label>
@@ -113,14 +113,14 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
                     value={formik.values.firstName}
                     style={
                       formik.errors.firstName
-                        ? { border: "1px solid red" }
+                        ? { border: "1px solid #E5271B" }
                         : null
                     }
                   />
                 </div>
                 <div className={style.box_input}>
                   <label
-                    style={formik.errors.lastName ? { color: "red" } : null}
+                    style={formik.errors.lastName ? { color: "#E5271B" } : null}
                   >
                     Ваше фамилия
                   </label>
@@ -134,13 +134,13 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
                     value={formik.values.lastName}
                     style={
                       formik.errors.lastName
-                        ? { border: "1px solid red" }
+                        ? { border: "1px solid #E5271B" }
                         : null
                     }
                   />
                 </div>
                 <div className={style.box_input}>
-                  <label style={formik.errors.email ? { color: "red" } : null}>
+                  <label style={formik.errors.email ? { color: "#E5271B" } : null}>
                     Электронная почта
                   </label>
                   <input
@@ -152,13 +152,13 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
                     onBlur={formik.handleBlur}
                     value={formik.values.email}
                     style={
-                      formik.errors.email ? { border: "1px solid red" } : null
+                      formik.errors.email ? { border: "1px solid #E5271B" } : null
                     }
                   />
                 </div>
                 <div className={style.box_input}>
                   <label
-                    style={formik.errors.phoneNumber ? { color: "red" } : null}
+                    style={formik.errors.phoneNumber ? { color: "#E5271B" } : null}
                   >
                     Ваш номер телефона
                   </label>
@@ -171,14 +171,14 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
                     value={formik.values.phoneNumber}
                     style={
                       formik.errors.phoneNumber
-                        ? { border: "1px solid red" }
+                        ? { border: "1px solid #E5271B" }
                         : null
                     }
                   />
                 </div>
                 <div className={style.box_input}>
                   <label
-                    style={formik.errors.country ? { color: "red" } : null}
+                    style={formik.errors.country ? { color: "#E5271B" } : null}
                   >
                     Страна
                   </label>
@@ -191,12 +191,12 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
                     onBlur={formik.handleBlur}
                     value={formik.values.country}
                     style={
-                      formik.errors.country ? { border: "1px solid red" } : null
+                      formik.errors.country ? { border: "1px solid #E5271B" } : null
                     }
                   />
                 </div>
                 <div className={style.box_input}>
-                  <label style={formik.errors.city ? { color: "red" } : null}>
+                  <label style={formik.errors.city ? { color: "#E5271B" } : null}>
                     Город
                   </label>
                   <input
@@ -208,7 +208,7 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
                     onBlur={formik.handleBlur}
                     value={formik.values.city}
                     style={
-                      formik.errors.city ? { border: "1px solid red" } : null
+                      formik.errors.city ? { border: "1px solid #E5271B" } : null
                     }
                   />
                 </div>
@@ -221,7 +221,7 @@ const Checkout = ({ price, sale, totalPayable, product, allProduct }) => {
                     onBlur={formik.handleBlur}
                     value={formik.values.checked}
                     style={
-                      formik.errors.checked ? { border: "1px solid red" } : null
+                      formik.errors.checked ? { border: "1px solid #E5271B" } : null
                     }
                   />
                   <h6>
