@@ -26,7 +26,6 @@ const Footer = () => {
           <Link to={"/"}>
             <img src={data.logo2} className={style.footer_logo} />
           </Link>
-          <p className={style.footer_madeIn}>Developed by Zeon 2022</p>
         </div>
         <div className={style.box}>
           <h5>Компания</h5>
@@ -98,6 +97,7 @@ const Footer = () => {
             </a>
           </ul>
         </div>
+        <p className={style.footer_madeIn}>Developed by Zeon 2022</p>
       </div>
     </footer>
   );

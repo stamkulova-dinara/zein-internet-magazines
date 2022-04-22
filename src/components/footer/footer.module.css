@@ -47,26 +47,25 @@ h5 {
     font-weight: 400 Regular;
     font-size: 14px;
     line-height: 17px;
+    width: 360px;
 }
 
 .icon_footer {
     margin-right: 6px;
 }
 @media screen and (max-width: 1115px) and (min-width: 320px) {
+    footer {
+        padding: 10px 20px;
+    }
+
+    .footer_logo {
+        margin-left: 15px;
+    }
     .footer_madeIn {
-        display: none;
+        padding-top: 15px;
+        border-top: 1px solid #363635;
     }
     .only_view_mob {
         display: block;
-    }
-
-    .mobile_none{
-        display: none;
-    }
-}
-
-@media screen and (max-width: 535px) and (min-width: 320px) {
-    footer {
-        padding: 10px 20px;
     }
 }

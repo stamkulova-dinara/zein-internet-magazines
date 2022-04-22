@@ -5,7 +5,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    min-height: 300px;
     font-family: Montserrat;
 }
 
