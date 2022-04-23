@@ -3,16 +3,14 @@ import style from "../../assets/styles/content.module.css";
 import Similar from "../card/Similar";
 import { SwiperSlide } from "swiper/react";
 import MobileCarousel from "../mobileCarousel/MobileCarousel";
+import { getProduct } from "../../container/httpRequest";
 
 const SimilarProduct = ({ id }) => {
   const [similar, setSimilar] = useState([]);
 
   const getCollectionById = async () => {
-    const fetchData = await fetch(
-      "https://623c10012e056d1037f94796.mockapi.io/api/v1/products"
-    );
-    const jsonData = await fetchData.json();
-    setSimilar(jsonData);
+    const fetchData = await getProduct()
+    setSimilar(fetchData);
   };
 
   useEffect(() => {
